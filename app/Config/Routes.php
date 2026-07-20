@@ -26,7 +26,7 @@ $routes->post('/modifierFrais/(:num)', 'Operateur::modifierFrais/$1');
 $routes->get('/ajouterPrefixe', 'Operateur::formPrefixe');
 $routes->post('/ajouterPrefixe', 'Operateur::ajouterPrefixe');
 
-$routes->get('/voirGain/(:num)', 'Operateur::afficherGain/$1');
+$routes->get('/voirGain/(:any)', 'Operateur::afficherGain/$1');
 
 //Client
 $routes->get('/', 'Home::client');

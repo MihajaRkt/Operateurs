@@ -1054,3 +1054,286 @@ in APPPATH/Controllers/Operateur.php on line 44.
  6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
  7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
  8 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+ERROR - 2026-07-20 08:59:37 --> Unable to prepare statement: no such column: operateurs.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/OperationModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Operateur.php(165): App\Models\OperationModel->getGain()
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+13 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 08:59:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: no such column: operateurs.nom
+[Method: GET, Route: voirGain/Orange]
+in SYSTEMPATH/Database/BaseConnection.php on line 865.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/OperationModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Operateur.php(165): App\Models\OperationModel->getGain()
+ 4 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 5 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 08:59:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: no such column: operateurs.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 174.
+ 1 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/OperationModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Operateur.php(165): App\Models\OperationModel->getGain()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 08:59:37 --> [Caused by] SQLite3Exception: Unable to prepare statement: no such column: operateurs.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/OperationModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Operateur.php(165): App\Models\OperationModel->getGain()
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+13 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+ERROR - 2026-07-20 08:59:37 --> Unable to prepare statement: no such column: operateurs.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/OperationModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Operateur.php(165): App\Models\OperationModel->getGain()
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+13 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 08:59:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: no such column: operateurs.nom
+[Method: GET, Route: voirGain/Orange]
+in SYSTEMPATH/Database/BaseConnection.php on line 865.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 APPPATH/Models/OperationModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Operateur.php(165): App\Models\OperationModel->getGain()
+ 4 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 5 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 08:59:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: no such column: operateurs.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 174.
+ 1 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Models/OperationModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Operateur.php(165): App\Models\OperationModel->getGain()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 08:59:37 --> [Caused by] SQLite3Exception: Unable to prepare statement: no such column: operateurs.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/OperationModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Operateur.php(165): App\Models\OperationModel->getGain()
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+13 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:00:10 --> ErrorException: Array to string conversion
+[Method: GET, Route: voirGain/Orange]
+in APPPATH/Views/operateurs/gain.php on line 32.
+ 1 APPPATH/Views/operateurs/gain.php(32): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/gain.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(167): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:00:11 --> ErrorException: Array to string conversion
+[Method: GET, Route: voirGain/Orange]
+in APPPATH/Views/operateurs/gain.php on line 32.
+ 1 APPPATH/Views/operateurs/gain.php(32): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/gain.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(167): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:00:32 --> ErrorException: Undefined array key "gains"
+[Method: GET, Route: voirGain/Orange]
+in APPPATH/Views/operateurs/gain.php on line 32.
+ 1 APPPATH/Views/operateurs/gain.php(32): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/gain.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(167): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:00:33 --> ErrorException: Undefined array key "gains"
+[Method: GET, Route: voirGain/Orange]
+in APPPATH/Views/operateurs/gain.php on line 32.
+ 1 APPPATH/Views/operateurs/gain.php(32): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/gain.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(167): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:00:33 --> ErrorException: Undefined array key "gains"
+[Method: GET, Route: voirGain/Orange]
+in APPPATH/Views/operateurs/gain.php on line 32.
+ 1 APPPATH/Views/operateurs/gain.php(32): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/gain.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(167): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:00:33 --> ErrorException: Undefined array key "gains"
+[Method: GET, Route: voirGain/Orange]
+in APPPATH/Views/operateurs/gain.php on line 32.
+ 1 APPPATH/Views/operateurs/gain.php(32): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/gain.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(167): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:00:57 --> ErrorException: Undefined array key "gains"
+[Method: GET, Route: voirGain/Orange]
+in APPPATH/Controllers/Operateur.php on line 169.
+ 1 APPPATH/Controllers/Operateur.php(169): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:00:58 --> ErrorException: Undefined array key "gains"
+[Method: GET, Route: voirGain/Orange]
+in APPPATH/Controllers/Operateur.php on line 169.
+ 1 APPPATH/Controllers/Operateur.php(169): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:01:04 --> ErrorException: Undefined array key "gains"
+[Method: GET, Route: voirGain/Airtel]
+in APPPATH/Controllers/Operateur.php on line 169.
+ 1 APPPATH/Controllers/Operateur.php(169): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:01:58 --> ErrorException: Undefined array key "gains"
+[Method: GET, Route: voirGain/Airtel]
+in APPPATH/Controllers/Operateur.php on line 169.
+ 1 APPPATH/Controllers/Operateur.php(169): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:01:59 --> ErrorException: Undefined array key "gains"
+[Method: GET, Route: voirGain/Airtel]
+in APPPATH/Controllers/Operateur.php on line 169.
+ 1 APPPATH/Controllers/Operateur.php(169): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:02:50 --> ErrorException: Undefined array key "gains"
+[Method: GET, Route: voirGain/Airtel]
+in APPPATH/Models/OperationModel.php on line 38.
+ 1 APPPATH/Models/OperationModel.php(38): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Operateur.php(165): App\Models\OperationModel->getGain()
+ 3 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 4 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:02:51 --> ErrorException: Undefined array key "gains"
+[Method: GET, Route: voirGain/Airtel]
+in APPPATH/Models/OperationModel.php on line 38.
+ 1 APPPATH/Models/OperationModel.php(38): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/Operateur.php(165): App\Models\OperationModel->getGain()
+ 3 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 4 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
