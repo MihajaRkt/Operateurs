@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\CommissionModel;
 use App\Models\OperateurModel;
 use App\Models\FraisModel;
 use App\Models\OperationModel;
@@ -60,7 +61,7 @@ class Operateur extends BaseController
         return view('operateurs/form-frais');
     }
 
-        public function ajouterFrais()
+    public function ajouterFrais()
     {
         $operateur = session()->get('user');
 
@@ -86,8 +87,8 @@ class Operateur extends BaseController
     public function formModifierFrais($id)
     {
         $fraisModel = new FraisModel();
-        $frais= $fraisModel -> find($id);
-        
+        $frais = $fraisModel->find($id);
+
         return view('operateurs/form-frais', [
             'frais' => $frais
         ]);
@@ -97,7 +98,7 @@ class Operateur extends BaseController
     {
 
         $fraisModel = new FraisModel();
-        $frais= $fraisModel -> find($id);
+        $frais = $fraisModel->find($id);
 
         $desc = $this->request->getPost('desc');
         $min = $this->request->getPost('min');
@@ -152,17 +153,18 @@ class Operateur extends BaseController
         $roles = array_column($operateurs, 'prefixe');
 
         if (!in_array($prefixe, $roles, true)) {
-            $operateurModel -> insert($data);
+            $operateurModel->insert($data);
         }
 
         return redirect()->to('/ajouterPrefixe');
     }
 
-    public function afficherGain($nom){
-        $operationModel= new OperationModel();
-        $details = $operationModel -> getDetailsOperations($nom);
-        
-        $somme= $operationModel -> getGain($nom);
+    public function afficherGain($nom)
+    {
+        $operationModel = new OperationModel();
+        $details = $operationModel->getDetailsOperations($nom);
+
+        $somme = $operationModel->getGain($nom);
 
         return view('operateurs/gain', [
             'details' => $details,
@@ -170,10 +172,11 @@ class Operateur extends BaseController
         ]);
     }
 
-    public function afficherClients($nom){
-        $operationModel= new OperationModel();
-        $details = $operationModel -> getUtilisateurs($nom);
-        
+    public function afficherClients($nom)
+    {
+        $operationModel = new OperationModel();
+        $details = $operationModel->getUtilisateurs($nom);
+
         return view('operateurs/clients', [
             'details' => $details
         ]);
@@ -199,4 +202,48 @@ class Operateur extends BaseController
         return redirect()->to('/');
     }
 
+    public function commission()
+    {
+        $user = session()->get('user');
+
+        if (!$user) {
+            return redirect()->to('/loginOperateur');
+        }
+
+        $model = new CommissionModel();
+        $comm = $model->getByOperateurId((int) $user['id']);
+
+        return view('operateurs/commission', [
+            'user' => $user,
+            'commission' => $comm,
+            'pourcentage' => $comm['pourcentage'] ?? 0,
+        ]);
+    }
+
+    public function modifierCommission()
+    {
+        $user = session()->get('user');
+
+        if (!$user) {
+            return redirect()->to('/loginOperateur');
+        }
+
+        $pourcentage = $this->request->getPost('pourcentage');
+
+        if (!is_numeric($pourcentage) || $pourcentage < 0 || $pourcentage > 100) {
+            return redirect()->back()
+                ->withInput()
+                ->with('erreur', 'La commission doit être comprise entre 0 et 100.');
+        }
+
+        $model = new CommissionModel();
+        if (!$model->saveCommission((int) $user['id'], (float) $pourcentage)) {
+            return redirect()->back()
+                ->withInput()
+                ->with('erreur', 'La mise à jour de la commission a échoué.');
+        }
+
+        return redirect()->to('/voirCommission')
+            ->with('success', 'Commission mise à jour avec succès.');
+    }
 }

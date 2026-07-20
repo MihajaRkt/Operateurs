@@ -28,6 +28,8 @@ $routes->get("/ajouterPrefixe", "Operateur::formPrefixe");
 $routes->post("/ajouterPrefixe", "Operateur::ajouterPrefixe");
 
 $routes->get('/voirGain/(:any)', 'Operateur::afficherGain/$1');
+$routes->get('/voirCommission', 'Operateur::commission');
+$routes->post('/voirCommission', 'Operateur::modifierCommission');
 
 $routes->get('/compteClients/(:any)', 'Operateur::afficherClients/$1');
 

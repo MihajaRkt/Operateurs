@@ -24,6 +24,11 @@ $opLinks = [
         'label' => 'Frais operateur',
         'icon'  => 'bi-cash-coin',
     ],
+    'commission' => [
+        'href'  => '/voirCommission',
+        'label' => 'Configuration de commission',
+        'icon'  => 'bi-cash-coin',
+    ],
     'gain' => [
         'href'  => '/voirGain/' . rawurlencode((string) $opNom),
         'label' => 'Mes gains',
