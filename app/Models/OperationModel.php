@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use CodeIgniter\Model;
 
 class OperationModel extends Model
@@ -52,4 +53,9 @@ class OperationModel extends Model
             ->getResultArray();
     }
 
+
+    public function enregistrerOperation(array $data): bool
+    {
+        return $this->insert($data) !== false;
+    }
 }

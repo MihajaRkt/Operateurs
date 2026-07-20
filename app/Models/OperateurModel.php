@@ -9,4 +9,8 @@ class OperateurModel extends Model
     protected $primaryKey = 'idOperateur';
     protected $allowedFields = ['idOperateur', 'prefixe', 'nom'];
 
+    public function getByTelephone(string $telephone): ?array
+    {
+        return $this->where('prefixe', substr($telephone, 0, 3))->first();
+    }
 }

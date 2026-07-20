@@ -10,6 +10,18 @@
 
     <h1>Faire un retrait</h1>
 
+    <?php if (session()->getFlashdata('erreur')) : ?>
+        <p style="color: red;">
+            <?= session()->getFlashdata('erreur') ?>
+        </p>
+    <?php endif; ?>
+
+    <?php if (!empty($erreur)) : ?>
+        <p style="color: red;">
+            <?= esc($erreur) ?>
+        </p>
+    <?php endif; ?>
+
     <form action="/retrait/save" method="post">
 
         <p>
@@ -19,6 +31,11 @@
                 name="montant"
                 min="1"
                 required>
+        </p>
+
+        <p>
+            Date :
+            <input type="date" name="date" required>
         </p>
 
         <input type="submit" value="Retirer">

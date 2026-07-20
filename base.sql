@@ -53,6 +53,7 @@ INSERT INTO frais (description, montantMin, montantMax, montant) VALUES
 ('Montant compris entre 500 001 et 1 000 000 Ar', 500001.00, 1000000.00, 2500.00),
 ('Montant compris entre 1 000 001 et 2 000 000 Ar', 1000001.00, 2000000.00, 3000.00);
 
+
 CREATE TABLE utilisateurs(
     idUtilisateur INTEGER PRIMARY KEY AUTOINCREMENT,
     nom varchar(75),
