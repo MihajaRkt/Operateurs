@@ -148,6 +148,7 @@ class OperationModel extends Model
             ->getResultArray();
     }
 
+    
     public function getGainByFrais($idType_operation, $nom)
     {
         $sql = $this->db

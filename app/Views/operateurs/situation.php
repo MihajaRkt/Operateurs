@@ -73,8 +73,8 @@
                                         <td><?= esc($d["type"]) ?></td>
                                         <td><?= esc($d["client"]) ?></td>
                                         <td><?= esc($d["date"]) ?></td>
-                                        <td><?= esc((string) $d["montant"]) ?></td>
-                                        <td><?= esc((string) $d["gain"]) ?></td>
+                                        <td><?= esc((string) $d["montant"]) ?> Ar</td>
+                                        <td><?= esc((string) $d["gain"]) ?> Ar</td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
@@ -87,7 +87,7 @@
             <div class="op-card p-3 p-lg-4">
                 <h2 class="h5 mb-3">Autres opérateurs</h2>
 
-                <?php if (!empty($details)): ?>
+                <?php if (!empty($transferts)): ?>
                     <div class="table-responsive">
                         <table class="table op-table align-middle">
                             <thead>
@@ -97,25 +97,30 @@
                                     <th>Date d'operation</th>
                                     <th>Montant</th>
                                     <th>Frais d'operation (Gain)</th>
+                                    <th>Commision vers opérateurs</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($details as $d): ?>
+                                <?php foreach ($transferts as $t): ?>
                                     <tr>
                                         <td>
-                                            <?= esc($d["type"]) ?>
+                                            <?= esc($t["type"]) ?>
                                         </td>
                                         <td>
-                                            <?= esc($d["client"]) ?>
+                                            <?= esc($t["client"]) ?>
                                         </td>
                                         <td>
-                                            <?= esc($d["date"]) ?>
+                                            <?= esc($t["date"]) ?>
                                         </td>
                                         <td>
-                                            <?= esc((string) $d["montant"]) ?>
+                                            <?= esc((string) $t["montant"]) ?> Ar
                                         </td>
                                         <td>
-                                            <?= esc((string) $d["gain"]) ?>
+                                            <?= esc((string) $t["gain"]) ?> Ar
+                                        </td>
+                                        <td>
+                                            <?php $normal= ($t["montant"] - $t["gain"]) * ($commission/100) ?>
+                                            <?= $normal ?> Ar
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

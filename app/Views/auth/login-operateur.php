@@ -31,7 +31,7 @@
                         <div class="mb-3">
                             <label for="numero" class="form-label">Votre numero</label>
                             <input type="text" class="form-control" id="numero" name="numero" required
-                                pattern="[0-9]+" inputmode="numeric" placeholder="Ex : 032" autofocus>
+                                pattern="[0-9]+" inputmode="numeric" value="034" autofocus>
                             <div class="invalid-feedback">Merci d'entrer un numero valide (chiffres uniquement).</div>
                         </div>
 

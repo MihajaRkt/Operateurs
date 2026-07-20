@@ -13,7 +13,7 @@
 3. Cote operateur
    - page de modification du prefixe operateurs (Mihaja) (OK)
    - page affichant les frais par tranche de montant (Mihaja) (OK)
-   - page affichant le gain selon le type d'operation (mihaja) (OK)
+   - page affichant le gain selon le type d'operation (Mihaja) (OK)
    - page affichant les pages clients
 
 4. Cote client 
@@ -32,10 +32,10 @@
    - page de configuration des prefixes (Mihaja) (OK)
    - page de modification de comission pour le transfert vers autres operateurs (Tendry) (OK)
       modification table :
-         operations : alter table add column idDestinataire (OK)
+         operations : alter table add column idDestinataire (Tendry) (OK)
       
-   - 
-   - page de situation de gain selon les frais (Mihaja)
+   - page de situation de gain selon les frais (Mihaja) (OK)
+   - situation des montants pour les autres opérateurs (Mihaja) (OK)
 
 3. Cote client
    -  option inclure frais de retrait lors de l’envoi (Tendry)

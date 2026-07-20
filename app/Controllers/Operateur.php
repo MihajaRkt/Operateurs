@@ -8,6 +8,8 @@ use App\Models\FraisModel;
 use App\Models\OperationModel;
 use App\Models\TypeOperationModel;
 
+use App\Models\UtilisateurModel;
+
 class Operateur extends BaseController
 {
     public function login()
@@ -192,14 +194,19 @@ class Operateur extends BaseController
 
         $operationModel = new OperationModel();
         $details = $operationModel->getGainOperateur();
+        $transferts = $operationModel -> getGainFiltre(3, $user["nom"]);
 
         $somme = $operationModel->getGain($user['nom']);
 
-        
+        $commissionModel = new CommissionModel();
+        $commission = $commissionModel -> getByOperateurId($user["id"]);
+
         return view('operateurs/situation', [
-            'details' => $details,
+            'somme' => $somme,
             'types' => $type,
-            'somme' => $somme
+            'details' => $details,
+            'transferts' => $transferts,
+            'commission' => $commission['pourcentage']
         ]);
     }
 
@@ -212,8 +219,15 @@ class Operateur extends BaseController
         $type = $typeModel->findAll();
 
         $operationModel = new OperationModel();
-        $somme = $operationModel->getGain($user['nom']);
+
         $details = $operationModel->getGainOperateur();
+        $transferts = $operationModel -> getGainFiltre(3, $user["nom"]);
+
+        $somme = $operationModel->getGain($user['nom']);
+
+        $commissionModel = new CommissionModel();
+        $commission = $commissionModel -> getByOperateurId($user["id"]);
+
 
         if ($id != null) {
             if ($id == 'all') {
@@ -228,7 +242,9 @@ class Operateur extends BaseController
         return view('operateurs/situation', [
             'details' => $details,
             'types' => $type,
-            'somme' => $somme
+            'somme' => $somme,
+            'transferts' => $transferts,
+            'commission' => $commission['pourcentage']
         ]);
 
     }
@@ -283,4 +299,21 @@ class Operateur extends BaseController
         return redirect()->to('/voirCommission')
             ->with('success', 'Commission mise à jour avec succès.');
     }
+
+    public function historique($id)
+    {
+        $utilisateurModel= new UtilisateurModel();
+        $user = $utilisateurModel -> find($id);
+
+        $operationModel = new OperationModel();
+        $operations = $operationModel->getHistoriqueByUtilisateur(
+            (int) $user["idUtilisateur"],
+        );
+
+        return view("operateurs/historique", [
+            "user" => $user,
+            "operations" => $operations
+        ]);
+    }
+
 }
