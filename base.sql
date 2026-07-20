@@ -6,6 +6,8 @@ DROP TABLE IF EXISTS frais;
 
 DROP TABLE IF EXISTS operations;
 
+DROP TABLE IF EXISTS solde;
+
 DROP TABLE IF EXISTS utilisateurs;
 
 CREATE TABLE operateurs(
@@ -31,10 +33,11 @@ INSERT INTO type_operation(nom) VALUES
 ('retrait'),
 ('transfert');
 
-
 CREATE TABLE frais(
     idFrais INTEGER PRIMARY KEY AUTOINCREMENT,
     description varchar(100),
+    montantMin decimal(10,2),
+    montantMax decimal(10,2),
     montant decimal(10,2)
 );
 
@@ -57,3 +60,12 @@ INSERT INTO utilisateurs(nom, telephone, motdepasse) VALUES
 ('Alice', '0320000000', 'a'),
 ('Admin', '0330000000', 'a');
 
+CREATE TABLE solde(
+    idSolde INTEGER PRIMARY KEY AUTOINCREMENT,
+    idUtilisateur INT REFERENCES utilisateurs(idUtilisateur),
+    montant decimal(10,2)
+);
+
+INSERT INTO solde(idUtilisateur, montant) VALUES
+(1, 10000),
+(2, 20000);
