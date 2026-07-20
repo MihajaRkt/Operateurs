@@ -90,9 +90,9 @@
                                 <?php foreach ($frais as $f): ?>
                                     <tr>
                                         <td><?= esc($f["description"]) ?></td>
-                                        <td><?= esc((string) $f["montantMin"]) ?> Ar</td>
-                                        <td><?= esc((string) $f["montantMax"]) ?> Ar</td>
-                                        <td><?= esc((string) $f["montant"]) ?> Ar</td>
+                                        <td><?= esc((string) $f["montantMin"]) ?></td>
+                                        <td><?= esc((string) $f["montantMax"]) ?></td>
+                                        <td><?= esc((string) $f["montant"]) ?></td>
                                         <td class="text-end">
                                             <a href="/modifierFrais/<?= esc((string) $f["idFrais"]) ?>"
                                                 class="btn btn-outline-secondary btn-sm">

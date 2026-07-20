@@ -49,7 +49,7 @@
                                     <tr>
                                         <td><?= esc($d["operateur"]) ?></td>
                                         <td><?= esc($d["client"]) ?></td>
-                                        <td><?= esc((string) $d["solde"]) ?> Ar</td>
+                                        <td><?= esc((string) $d["solde"]) ?></td>
                                         <td class="text-end">
                                             <a href="/profil/<?= esc((string) $d["idClient"]) ?>"
                                                 class="btn btn-outline-secondary btn-sm">

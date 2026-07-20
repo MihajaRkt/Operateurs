@@ -36,7 +36,7 @@
                 <div class="row g-3 align-items-center">
                     <div class="col">
                         <div class="text-muted small">Gain total</div>
-                        <div class="op-stat-value fs-3"><?= esc((string) $somme) ?> Ar</div>
+                        <div class="op-stat-value fs-3"><?= esc((string) $somme) ?></div>
                     </div>
                 </div>
             </div>
@@ -64,8 +64,8 @@
                                         <td><?= esc($d["type"]) ?></td>
                                         <td><?= esc($d["client"]) ?></td>
                                         <td><?= esc($d["date"]) ?></td>
-                                        <td><?= esc((string) $d["montant"]) ?> Ar</td>
-                                        <td><?= esc((string) $d["gain"]) ?> Ar</td>
+                                        <td><?= esc((string) $d["montant"]) ?></td>
+                                        <td><?= esc((string) $d["gain"]) ?></td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

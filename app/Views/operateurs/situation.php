@@ -73,8 +73,8 @@
                                         <td><?= esc($d["type"]) ?></td>
                                         <td><?= esc($d["client"]) ?></td>
                                         <td><?= esc($d["date"]) ?></td>
-                                        <td><?= esc((string) $d["montant"]) ?> Ar</td>
-                                        <td><?= esc((string) $d["gain"]) ?> Ar</td>
+                                        <td><?= esc((string) $d["montant"]) ?></td>
+                                        <td><?= esc((string) $d["gain"]) ?></td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
@@ -113,14 +113,14 @@
                                             <?= esc($t["date"]) ?>
                                         </td>
                                         <td>
-                                            <?= esc((string) $t["montant"]) ?> Ar
+                                            <?= esc((string) $t["montant"]) ?>
                                         </td>
                                         <td>
-                                            <?= esc((string) $t["gain"]) ?> Ar
+                                            <?= esc((string) $t["gain"]) ?>
                                         </td>
                                         <td>
                                             <?php $normal= ($t["montant"] - $t["gain"]) * ($commission/100) ?>
-                                            <?= $normal ?> Ar
+                                            <?= $normal ?>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
