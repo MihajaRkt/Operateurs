@@ -11,3 +11,18 @@ in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
  8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
  9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
 10 SYSTEMPATH/rewrite.php(44): require_once('/home/tendry/Documents/GitHub/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 06:29:57 --> ErrorException: Undefined variable $user
+[Method: POST, Route: loginOperateur]
+in APPPATH/Views/operateurs/accueil.php on line 9.
+ 1 APPPATH/Views/operateurs/accueil.php(9): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/accueil.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(37): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->login()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')

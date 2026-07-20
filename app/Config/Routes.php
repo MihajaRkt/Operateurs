@@ -7,7 +7,10 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 $routes->get('/', 'Home::index');
+
 $routes->get('/loginOperateur', 'Home::operateur');
+$routes->post('/loginOperateur', 'Operateur::login');
+
 $routes->get('/', 'Home::client');
 
 // $routes->get('/', 'Produit::produitsFiltre');
