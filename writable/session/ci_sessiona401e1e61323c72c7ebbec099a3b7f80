@@ -1,1 +1,0 @@
-__ci_last_regenerate|i:1784529327;user|a:3:{s:2:"id";i:1;s:3:"nom";s:5:"Alice";s:9:"telephone";s:10:"0320000000";}_ci_previous_url|s:33:"http://localhost:8080/clientLogin";_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:1:{s:6:"numero";s:12:"12394u309394";}}__ci_vars|a:2:{s:13:"_ci_old_input";s:3:"new";s:6:"erreur";s:3:"new";}erreur|s:32:"Numéro de téléphone invalide.";

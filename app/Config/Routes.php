@@ -31,6 +31,8 @@ $routes->get('/voirGain/(:any)', 'Operateur::afficherGain/$1');
 
 $routes->get('/compteClients/(:any)', 'Operateur::afficherClients/$1');
 
+$routes->get("/logout", "Operateur::logout");
+
 //Client
 $routes->get("/", "Home::client");
 
