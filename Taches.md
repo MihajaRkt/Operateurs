@@ -12,7 +12,7 @@
 
 3. Cote operateur
    - page de modification du prefixe operateurs
-   - page affichant les frais par tranche de montant
+   - page affichant les frais par tranche de montant (Mihaja) (OK)
    - page affichant le gain selon le type d'operation
    - page affichant les pages clients
 
