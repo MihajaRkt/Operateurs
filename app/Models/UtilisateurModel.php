@@ -15,5 +15,7 @@ class UtilisateurModel extends Model
         return $this->where('telephone', $telephone)->first();
     }
 
-    public function sameOperateur($idUser, $idDestinataire) {}
+    public function sameOperateur($idUser, $idDestinataire) {
+        
+    }
 }
