@@ -29,7 +29,7 @@ class Database extends Config
         'hostname'     => '',
         'username'     => '',
         'password'     => '',
-        'database'     => WRITEPATH . 'livraison.db',
+        'database'     => WRITEPATH . 'database/operateur.db',
         'DBDriver'     => 'SQLite3',
         'DBPrefix'     => '',
         'pConnect'     => false,
