@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Operateur <?= $user["nom"] ?> </h1>
+    <a href="/ajouterPrefixe"> Ajouter un prefixe</a>
     <a href="/ajouterFrais"> Ajouter des frais </a>
     <table border="1">
         <tr>

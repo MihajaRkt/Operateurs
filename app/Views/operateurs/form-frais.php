@@ -6,6 +6,7 @@
     <title>Ajout frais - Operateur</title>
 </head>
 <body>
+    <h1>Ajouter un frais</h1>
     <form action="/ajouterFrais" method="post">
         <p>Description <input type="text" name="desc"> </p>
         <p> Montant Min: <input type="number" name="min" min="0"></p>

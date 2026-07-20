@@ -63,25 +63,65 @@ class Operateur extends BaseController
     {
         $operateur = session()->get('user');
 
-        $fraisModel= new FraisModel();
+        $fraisModel = new FraisModel();
 
         $desc = $this->request->getPost('desc');
         $min = $this->request->getPost('min');
         $max = $this->request->getPost('max');
         $montant = $this->request->getPost('montant');
 
-        $data= [
+        $data = [
             'description' => $desc,
             'montantMin' => $min,
             'montantMax' => $max,
             'montant' => $montant
         ];
 
-        $fraisModel -> insert($data);
+        $fraisModel->insert($data);
 
-        $frais = $fraisModel->findAll();
+        return redirect()->to('/accueil');
+    }
 
-        return redirect() -> to('/accueil');
+    public function formPrefixe()
+    {
+        $user = session()->get('user');
+
+        $operateurModel = new OperateurModel();
+
+        $operateurs = $operateurModel
+            ->where('operateurs.nom', $user['nom'])
+            ->findAll();
+
+        return view('operateurs/form-prefixe', [
+            'operateurs' => $operateurs,
+            'user' => $user
+        ]);
+    }
+
+    public function ajouterPrefixe()
+    {
+        $user = session()->get('user');
+
+        $operateurModel = new OperateurModel();
+
+        $prefixe = $this->request->getPost('prefixe');
+
+        $data = [
+            'prefixe' => $prefixe,
+            'nom' => $user['nom']
+        ];
+
+        $operateurs = $operateurModel
+            ->where('operateurs.nom', $user['nom'])
+            ->findAll();
+
+        $roles = array_column($operateurs, 'prefixe');
+
+        if (!in_array($prefixe, $roles, true)) {
+            $operateurModel -> insert($data);
+        }
+
+        return redirect()->to('/ajouterPrefixe');
     }
 
     public function showSignUp()
