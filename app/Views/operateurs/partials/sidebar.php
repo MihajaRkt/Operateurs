@@ -27,7 +27,7 @@ $opLinks = [
     'commission' => [
         'href'  => '/voirCommission',
         'label' => 'Configuration de commission',
-        'icon'  => 'bi-cash-coin',
+        'icon'  => 'bi-coin',
     ],
     'gain' => [
         'href'  => '/voirGain/' . rawurlencode((string) $opNom),

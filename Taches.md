@@ -33,7 +33,7 @@
    - page de modification de comission pour le transfert vers autres       operateurs (Tendry)
       modification table :
          operateurs : alter table add column commission
-   - 
+   - page de situation de gain selon les frais (Mihaja)
 
 3. Cote client
 
