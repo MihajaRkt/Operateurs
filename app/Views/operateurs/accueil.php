@@ -7,5 +7,23 @@
 </head>
 <body>
     <h1>Operateur <?= $user["nom"] ?> </h1>
+    <a href="/ajouterFrais"> Ajouter des frais </a>
+    <table border="1">
+        <tr>
+            <th>Description</th>
+            <th>Montant min</th>
+            <th>Montant max</th>
+            <th>Frais</th>
+        </tr>
+
+        <?php foreach($frais as $f){ ?>
+            <tr>
+                <td><?= $f["description"] ?></td>
+                <td><?= $f["montantMin"] ?></td>
+                <td><?= $f["montantMax"] ?></td>
+                <td><?= $f["montant"] ?></td>
+            </tr>
+        <?php } ?>
+    </table>
 </body>
 </html>

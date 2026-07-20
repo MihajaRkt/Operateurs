@@ -8,8 +8,14 @@ use CodeIgniter\Router\RouteCollection;
 
 $routes->get('/', 'Home::index');
 
+// Operateurs
 $routes->get('/loginOperateur', 'Home::operateur');
 $routes->post('/loginOperateur', 'Operateur::login');
+
+$routes->get('/accueil', 'Operateur::accueil');
+
+$routes->get('/ajouterFrais', 'Operateur::formFrais');
+$routes->post('/ajouterFrais', 'Operateur::ajouterFrais');
 
 $routes->get('/', 'Home::client');
 
