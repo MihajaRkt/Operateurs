@@ -32,10 +32,10 @@
    - page de configuration des prefixes (Mihaja) (OK)
    - page de modification de comission pour le transfert vers autres operateurs (Tendry) (OK)
       modification table :
-         operations : alter table add column idDestinataire (OK)
+         operations : alter table add column idDestinataire (Tendry) (OK)
       
-   - page de situation de gain selon les frais (Mihaja)
-   - situation des montants pour les autres opérateurs (Mihaja)
+   - page de situation de gain selon les frais (Mihaja) (OK)
+   - situation des montants pour les autres opérateurs (Mihaja) (OK)
 
 3. Cote client
 
