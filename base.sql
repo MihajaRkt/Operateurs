@@ -98,7 +98,7 @@ CREATE TABLE operations(
     idType_operation INT REFERENCES type_operation(idType_operation),
     idFrais INT REFERENCES frais(idFrais),
     idUtilisateur INT REFERENCES utilisateurs(idUtilisateur),
-    destinataire varchar(30),
+    idDestinataire INT REFERENCES utilisateurs(idUtilisateur),
     date_operation DATE,
     montant decimal(10,2)
 );
