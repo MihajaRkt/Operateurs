@@ -182,3 +182,14 @@ in APPPATH/Views/operateurs/situation.php on line 123.
  9 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
 10 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
 11 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 13:55:44 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: profil/1]
+in APPPATH/Controllers/Operateur.php on line 310.
+ 1 APPPATH/Controllers/Operateur.php(310): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->historique()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')

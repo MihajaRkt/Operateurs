@@ -8,6 +8,8 @@ use App\Models\FraisModel;
 use App\Models\OperationModel;
 use App\Models\TypeOperationModel;
 
+use App\Models\UtilisateurModel;
+
 class Operateur extends BaseController
 {
     public function login()
@@ -297,4 +299,21 @@ class Operateur extends BaseController
         return redirect()->to('/voirCommission')
             ->with('success', 'Commission mise à jour avec succès.');
     }
+
+    public function historique($id)
+    {
+        $utilisateurModel= new UtilisateurModel();
+        $user = $utilisateurModel -> find($id);
+
+        $operationModel = new OperationModel();
+        $operations = $operationModel->getHistoriqueByUtilisateur(
+            (int) $user["idUtilisateur"],
+        );
+
+        return view("operateurs/historique", [
+            "user" => $user,
+            "operations" => $operations
+        ]);
+    }
+
 }

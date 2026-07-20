@@ -32,6 +32,7 @@ $routes->get('/voirCommission', 'Operateur::commission');
 $routes->post('/voirCommission', 'Operateur::modifierCommission');
 
 $routes->get('/compteClients/(:any)', 'Operateur::afficherClients/$1');
+$routes->get('/profil/(:num)', 'Operateur::historique/$1');
 
 $routes->get('/gainSepare', 'Operateur::afficherGainsSepare');
 
