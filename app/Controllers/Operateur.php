@@ -59,7 +59,7 @@ class Operateur extends BaseController
         return view('operateurs/form-frais');
     }
 
-    public function ajouterFrais()
+        public function ajouterFrais()
     {
         $operateur = session()->get('user');
 
@@ -79,7 +79,40 @@ class Operateur extends BaseController
 
         $fraisModel->insert($data);
 
-        return redirect()->to('/accueil');
+        return redirect()->to('/accueilOperateur');
+    }
+
+    public function formModifierFrais($id)
+    {
+        $fraisModel = new FraisModel();
+        $frais= $fraisModel -> find($id);
+        
+        return view('operateurs/form-frais', [
+            'frais' => $frais
+        ]);
+    }
+
+    public function modifierFrais($id)
+    {
+
+        $fraisModel = new FraisModel();
+        $frais= $fraisModel -> find($id);
+
+        $desc = $this->request->getPost('desc');
+        $min = $this->request->getPost('min');
+        $max = $this->request->getPost('max');
+        $montant = $this->request->getPost('montant');
+
+        $data = [
+            'description' => $desc,
+            'montantMin' => $min,
+            'montantMax' => $max,
+            'montant' => $montant
+        ];
+
+        $fraisModel->update($frais, $data);
+
+        return redirect()->to('/accueilOperateur');
     }
 
     public function formPrefixe()

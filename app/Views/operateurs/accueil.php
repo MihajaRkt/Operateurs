@@ -23,6 +23,7 @@
                 <td><?= $f["montantMin"] ?></td>
                 <td><?= $f["montantMax"] ?></td>
                 <td><?= $f["montant"] ?></td>
+                <td><a href="/modifierFrais/<?= $f["idFrais"] ?>">Modifier</a></td>
             </tr>
         <?php } ?>
     </table>
