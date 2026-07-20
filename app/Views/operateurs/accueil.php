@@ -9,6 +9,7 @@
     <h1>Operateur <?= $user["nom"] ?> </h1>
     <a href="/ajouterPrefixe"> Ajouter un prefixe</a>
     <a href="/ajouterFrais"> Ajouter des frais </a>
+    <a href="/voirGain/<?= $user["nom"] ?>"> Voir votre gain </a>
     <table border="1">
         <tr>
             <th>Description</th>

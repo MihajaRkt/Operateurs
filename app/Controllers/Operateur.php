@@ -157,9 +157,13 @@ class Operateur extends BaseController
         return redirect()->to('/ajouterPrefixe');
     }
 
-    public function showSignUp()
-    {
-        return view('signup');
+    public function afficherGain($nom){
+        $operateurModel= new OperateurModel();
+        $operateurs = $operateurModel
+                    -> where('operateurs.nom', $nom)
+                    -> findAll();
+
+        
     }
 
     public function logout()

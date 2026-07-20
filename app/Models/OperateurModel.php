@@ -8,4 +8,5 @@ class OperateurModel extends Model
     protected $table = 'operateurs';
     protected $primaryKey = 'idOperateur';
     protected $allowedFields = ['idOperateur', 'prefixe', 'nom'];
+
 }
