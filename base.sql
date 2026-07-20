@@ -17,9 +17,6 @@ CREATE TABLE operateurs(
 );
 
 INSERT INTO operateurs(prefixe, nom) VALUES
-('032', 'Orange'),
-('033', 'Airtel'),
-('037', 'Orange'),
 ('034', 'Yas'),
 ('038', 'Yas');
 
@@ -43,38 +40,38 @@ CREATE TABLE frais(
 );
 
 INSERT INTO frais (description, montantMin, montantMax, montant, idTypeOperation) VALUES
-('Montant compris entre 100 et 1 000 Ar', 100.00, 1000.00, 50.00, 3),
-('Montant compris entre 1001 et 5 000 Ar', 1001.00, 5000.00, 50.00, 1),
-('Montant compris entre 5 001 et 10 000 Ar', 5001.00, 10000.00, 100.00, 1),
-('Montant compris entre 10 001 et 25 000 Ar', 10001.00, 25000.00, 200.00, 1),
-('Montant compris entre 25 001 et 50 000 Ar', 25001.00, 50000.00, 400.00, 1),
-('Montant compris entre 50 001 et 100 000 Ar', 50001.00, 100000.00, 800.00, 1),
-('Montant compris entre 100 001 et 250 000 Ar', 100001.00, 250000.00, 1500.00, 1),
-('Montant compris entre 250 001 et 500 000 Ar', 250001.00, 500000.00, 1500.00, 1),
-('Montant compris entre 500 001 et 1 000 000 Ar', 500001.00, 1000000.00, 2500.00, 1),
-('Montant compris entre 1 000 001 et 2 000 000 Ar', 1000001.00, 2000000.00, 3000.00, 1),
+('Depot entre 100 et 1 000 Ar', 100.00, 1000.00, 50.00, 1),
+('Depot entre 1001 et 5 000 Ar', 1001.00, 5000.00, 50.00, 1),
+('Depot entre 5 001 et 10 000 Ar', 5001.00, 10000.00, 100.00, 1),
+('Depot entre 10 001 et 25 000 Ar', 10001.00, 25000.00, 200.00, 1),
+('Depot entre 25 001 et 50 000 Ar', 25001.00, 50000.00, 400.00, 1),
+('Depot entre 50 001 et 100 000 Ar', 50001.00, 100000.00, 800.00, 1),
+('Depot entre 100 001 et 250 000 Ar', 100001.00, 250000.00, 1500.00, 1),
+('Depot entre 250 001 et 500 000 Ar', 250001.00, 500000.00, 1500.00, 1),
+('Depot entre 500 001 et 1 000 000 Ar', 500001.00, 1000000.00, 2500.00, 1),
+('Depot entre 1 000 001 et 2 000 000 Ar', 1000001.00, 2000000.00, 3000.00, 1),
 
-('Montant compris entre 100 et 1 000 Ar', 100.00, 1000.00, 50.00, 2),
-('Montant compris entre 1001 et 5 000 Ar', 1001.00, 5000.00, 50.00, 2),
-('Montant compris entre 5 001 et 10 000 Ar', 5001.00, 10000.00, 100.00, 2),
-('Montant compris entre 10 001 et 25 000 Ar', 10001.00, 25000.00, 200.00, 2),
-('Montant compris entre 25 001 et 50 000 Ar', 25001.00, 50000.00, 400.00, 2),
-('Montant compris entre 50 001 et 100 000 Ar', 50001.00, 100000.00, 800.00, 2),
-('Montant compris entre 100 001 et 250 000 Ar', 100001.00, 250000.00, 1500.00, 2),
-('Montant compris entre 250 001 et 500 000 Ar', 250001.00, 500000.00, 1500.00, 2),
-('Montant compris entre 500 001 et 1 000 000 Ar', 500001.00, 1000000.00, 2500.00, 2),
-('Montant compris entre 1 000 001 et 2 000 000 Ar', 1000001.00, 2000000.00, 3000.00, 2),
+('Retrait entre 100 et 1 000 Ar', 100.00, 1000.00, 50.00, 2),
+('Retrait entre 1001 et 5 000 Ar', 1001.00, 5000.00, 50.00, 2),
+('Retrait entre 5 001 et 10 000 Ar', 5001.00, 10000.00, 100.00, 2),
+('Retrait entre 10 001 et 25 000 Ar', 10001.00, 25000.00, 200.00, 2),
+('Retrait entre 25 001 et 50 000 Ar', 25001.00, 50000.00, 400.00, 2),
+('Retrait entre 50 001 et 100 000 Ar', 50001.00, 100000.00, 800.00, 2),
+('Retrait entre 100 001 et 250 000 Ar', 100001.00, 250000.00, 1500.00, 2),
+('Retrait entre 250 001 et 500 000 Ar', 250001.00, 500000.00, 1500.00, 2),
+('Retrait entre 500 001 et 1 000 000 Ar', 500001.00, 1000000.00, 2500.00, 2),
+('Retrait entre 1 000 001 et 2 000 000 Ar', 1000001.00, 2000000.00, 3000.00, 2),
 
-('Montant compris entre 100 et 1 000 Ar', 100.00, 1000.00, 50.00, 3),
-('Montant compris entre 1001 et 5 000 Ar', 1001.00, 5000.00, 50.00, 3),
-('Montant compris entre 5 001 et 10 000 Ar', 5001.00, 10000.00, 100.00, 3),
-('Montant compris entre 10 001 et 25 000 Ar', 10001.00, 25000.00, 200.00, 3),
-('Montant compris entre 25 001 et 50 000 Ar', 25001.00, 50000.00, 400.00, 3),
-('Montant compris entre 50 001 et 100 000 Ar', 50001.00, 100000.00, 800.00, 3),
-('Montant compris entre 100 001 et 250 000 Ar', 100001.00, 250000.00, 1500.00, 3),
-('Montant compris entre 250 001 et 500 000 Ar', 250001.00, 500000.00, 1500.00, 3),
-('Montant compris entre 500 001 et 1 000 000 Ar', 500001.00, 1000000.00, 2500.00, 3),
-('Montant compris entre 1 000 001 et 2 000 000 Ar', 1000001.00, 2000000.00, 3000.00, 3);
+('Transfert entre 100 et 1 000 Ar', 100.00, 1000.00, 50.00, 3),
+('Transfert entre 1001 et 5 000 Ar', 1001.00, 5000.00, 50.00, 3),
+('Transfert entre 5 001 et 10 000 Ar', 5001.00, 10000.00, 100.00, 3),
+('Transfert entre 10 001 et 25 000 Ar', 10001.00, 25000.00, 200.00, 3),
+('Transfert entre 25 001 et 50 000 Ar', 25001.00, 50000.00, 400.00, 3),
+('Transfert entre 50 001 et 100 000 Ar', 50001.00, 100000.00, 800.00, 3),
+('Transfert entre 100 001 et 250 000 Ar', 100001.00, 250000.00, 1500.00, 3),
+('Transfert entre 250 001 et 500 000 Ar', 250001.00, 500000.00, 1500.00, 3),
+('Transfert entre 500 001 et 1 000 000 Ar', 500001.00, 1000000.00, 2500.00, 3),
+('Transfert entre 1 000 001 et 2 000 000 Ar', 1000001.00, 2000000.00, 3000.00, 3);
 
 
 CREATE TABLE utilisateurs(
@@ -104,10 +101,10 @@ CREATE TABLE operations(
 INSERT INTO operations (idOperateur, idType_operation, idFrais, idUtilisateur, date_operation, montant) VALUES
 (1, 1, 2, 1, '2026-07-01', 5000.00),
 (2, 2, 4, 2, '2026-07-02', 20000.00),
-(4, 3, 5, 3, '2026-07-05', 50000.00),
+(4, 2, 5, 3, '2026-07-05', 50000.00),
 (2, 1, 7, 4, '2026-07-10', 150000.00),
 (1, 2, 1, 5, '2026-07-12', 500.00),
-(5, 3, 9, 4, '2026-07-15', 600000.00),
+(5, 1, 9, 4, '2026-07-15', 600000.00),
 (3, 2, 10, 3, '2026-07-18', 1500000.00),
 (2, 1, 4, 1, '2026-07-20', 15000.00);
 
