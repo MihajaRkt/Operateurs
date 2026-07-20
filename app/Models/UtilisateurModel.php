@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use CodeIgniter\Model;
 
 class UtilisateurModel extends Model
@@ -13,4 +14,6 @@ class UtilisateurModel extends Model
     {
         return $this->where('telephone', $telephone)->first();
     }
+
+    public function sameOperateur($idUser, $idDestinataire) {}
 }

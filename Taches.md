@@ -2,8 +2,8 @@
 
 ## Version 1
 
-1. Lecture du sujet
-2. Creation des tables
+1. Lecture du sujet (OK)
+2. Creation des tables (Mihaja) (OK)
    - utilisateurs
    - type_operations
    - operations
@@ -22,3 +22,19 @@
    - page pour faire un retrait
    - page pour faire un transfert
    - page pour voir l'historique des operations
+
+
+## Version 2
+
+1. Lecture du sujet (OK)
+
+2. Cote operateur
+   - page de configuration des prefixes (Mihaja) (OK)
+   - page de modification de comission pour le transfert vers autres       operateurs (Tendry)
+      modification table :
+         operateurs : alter table add column commission
+
+   -  
+
+3. Cote client
+

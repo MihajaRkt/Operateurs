@@ -39,7 +39,7 @@ CREATE TABLE frais(
     montantMin decimal(10,2),
     montantMax decimal(10,2),
     montant decimal(10,2),
-    idTypeOperation INT REFERENCES type_operation(idType_operation),
+    idTypeOperation INT REFERENCES type_operation(idType_operation)
 );
 
 INSERT INTO frais (description, montantMin, montantMax, montant, idTypeOperation) VALUES
@@ -123,4 +123,14 @@ INSERT INTO solde(idUtilisateur, montant) VALUES
 (3, 50000.00),
 (4, 150000.00),
 (5, 5000.00);
+
+CREATE TABLE commission(
+    idCommission INTEGER PRIMARY KEY AUTOINCREMENT,
+    idOperateur INT REFERENCES operateurs(idOperateur),
+    pourcentage decimal(10,2)
+);
+
+INSERT INTO commission(idOperateur, pourcentage) VALUES
+(1, 20);
+ 
 

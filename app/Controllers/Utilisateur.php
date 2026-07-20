@@ -145,7 +145,7 @@ class Utilisateur extends BaseController
                 "Aucun frais ne correspond à ce montant.",
             );
         }
-
+        
         $montant = (float) $montant;
         $montantTotal = $montant + (float) $frais["montant"];
 
