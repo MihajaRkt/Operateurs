@@ -38,20 +38,43 @@ CREATE TABLE frais(
     description varchar(100),
     montantMin decimal(10,2),
     montantMax decimal(10,2),
-    montant decimal(10,2)
+    montant decimal(10,2),
+    idTypeOperation INT REFERENCES type_operation(idType_operation),
 );
 
-INSERT INTO frais (description, montantMin, montantMax, montant) VALUES
-('Montant compris entre 100 et 1 000 Ar', 100.00, 1000.00, 50.00),
-('Montant compris entre 1001 et 5 000 Ar', 1001.00, 5000.00, 50.00),
-('Montant compris entre 5 001 et 10 000 Ar', 5001.00, 10000.00, 100.00),
-('Montant compris entre 10 001 et 25 000 Ar', 10001.00, 25000.00, 200.00),
-('Montant compris entre 25 001 et 50 000 Ar', 25001.00, 50000.00, 400.00),
-('Montant compris entre 50 001 et 100 000 Ar', 50001.00, 100000.00, 800.00),
-('Montant compris entre 100 001 et 250 000 Ar', 100001.00, 250000.00, 1500.00),
-('Montant compris entre 250 001 et 500 000 Ar', 250001.00, 500000.00, 1500.00),
-('Montant compris entre 500 001 et 1 000 000 Ar', 500001.00, 1000000.00, 2500.00),
-('Montant compris entre 1 000 001 et 2 000 000 Ar', 1000001.00, 2000000.00, 3000.00);
+INSERT INTO frais (description, montantMin, montantMax, montant, idTypeOperation) VALUES
+('Montant compris entre 100 et 1 000 Ar', 100.00, 1000.00, 50.00, 3),
+('Montant compris entre 1001 et 5 000 Ar', 1001.00, 5000.00, 50.00, 1),
+('Montant compris entre 5 001 et 10 000 Ar', 5001.00, 10000.00, 100.00, 1),
+('Montant compris entre 10 001 et 25 000 Ar', 10001.00, 25000.00, 200.00, 1),
+('Montant compris entre 25 001 et 50 000 Ar', 25001.00, 50000.00, 400.00, 1),
+('Montant compris entre 50 001 et 100 000 Ar', 50001.00, 100000.00, 800.00, 1),
+('Montant compris entre 100 001 et 250 000 Ar', 100001.00, 250000.00, 1500.00, 1),
+('Montant compris entre 250 001 et 500 000 Ar', 250001.00, 500000.00, 1500.00, 1),
+('Montant compris entre 500 001 et 1 000 000 Ar', 500001.00, 1000000.00, 2500.00, 1),
+('Montant compris entre 1 000 001 et 2 000 000 Ar', 1000001.00, 2000000.00, 3000.00, 1),
+
+('Montant compris entre 100 et 1 000 Ar', 100.00, 1000.00, 50.00, 2),
+('Montant compris entre 1001 et 5 000 Ar', 1001.00, 5000.00, 50.00, 2),
+('Montant compris entre 5 001 et 10 000 Ar', 5001.00, 10000.00, 100.00, 2),
+('Montant compris entre 10 001 et 25 000 Ar', 10001.00, 25000.00, 200.00, 2),
+('Montant compris entre 25 001 et 50 000 Ar', 25001.00, 50000.00, 400.00, 2),
+('Montant compris entre 50 001 et 100 000 Ar', 50001.00, 100000.00, 800.00, 2),
+('Montant compris entre 100 001 et 250 000 Ar', 100001.00, 250000.00, 1500.00, 2),
+('Montant compris entre 250 001 et 500 000 Ar', 250001.00, 500000.00, 1500.00, 2),
+('Montant compris entre 500 001 et 1 000 000 Ar', 500001.00, 1000000.00, 2500.00, 2),
+('Montant compris entre 1 000 001 et 2 000 000 Ar', 1000001.00, 2000000.00, 3000.00, 2),
+
+('Montant compris entre 100 et 1 000 Ar', 100.00, 1000.00, 50.00, 3),
+('Montant compris entre 1001 et 5 000 Ar', 1001.00, 5000.00, 50.00, 3),
+('Montant compris entre 5 001 et 10 000 Ar', 5001.00, 10000.00, 100.00, 3),
+('Montant compris entre 10 001 et 25 000 Ar', 10001.00, 25000.00, 200.00, 3),
+('Montant compris entre 25 001 et 50 000 Ar', 25001.00, 50000.00, 400.00, 3),
+('Montant compris entre 50 001 et 100 000 Ar', 50001.00, 100000.00, 800.00, 3),
+('Montant compris entre 100 001 et 250 000 Ar', 100001.00, 250000.00, 1500.00, 3),
+('Montant compris entre 250 001 et 500 000 Ar', 250001.00, 500000.00, 1500.00, 3),
+('Montant compris entre 500 001 et 1 000 000 Ar', 500001.00, 1000000.00, 2500.00, 3),
+('Montant compris entre 1 000 001 et 2 000 000 Ar', 1000001.00, 2000000.00, 3000.00, 3);
 
 
 CREATE TABLE utilisateurs(

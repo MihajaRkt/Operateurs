@@ -8,13 +8,14 @@ class FraisModel extends Model
 {
     protected $table = 'frais';
     protected $primaryKey = 'idFrais';
-    protected $allowedFields = ['idFrais', 'description', 'montantMin', 'montantMax', 'montant'];
+    protected $allowedFields = ['idFrais', 'description', 'montantMin', 'montantMax', 'montant', 'idTypeOperation'];
 
 
-    public function getFraisByMontant($montant)
+    public function getFraisByMontant($montant, $idTypeOperation)
     {
         return $this->where('montantMin <=', $montant)
             ->where('montantMax >=', $montant)
+            ->where('idTypeOperation', $idTypeOperation)
             ->first();
     }
 }

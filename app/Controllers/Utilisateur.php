@@ -137,7 +137,7 @@ class Utilisateur extends BaseController
         }
 
         $fraisModel = new FraisModel();
-        $frais = $fraisModel->getFraisByMontant($montant);
+        $frais = $fraisModel->getFraisByMontant($montant, 3);
 
         if (!$frais) {
             return $this->renderClientForm(
