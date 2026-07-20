@@ -60,7 +60,7 @@ class Operateur extends BaseController
         return view('operateurs/form-frais');
     }
 
-        public function ajouterFrais()
+    public function ajouterFrais()
     {
         $operateur = session()->get('user');
 
@@ -86,8 +86,8 @@ class Operateur extends BaseController
     public function formModifierFrais($id)
     {
         $fraisModel = new FraisModel();
-        $frais= $fraisModel -> find($id);
-        
+        $frais = $fraisModel->find($id);
+
         return view('operateurs/form-frais', [
             'frais' => $frais
         ]);
@@ -97,7 +97,7 @@ class Operateur extends BaseController
     {
 
         $fraisModel = new FraisModel();
-        $frais= $fraisModel -> find($id);
+        $frais = $fraisModel->find($id);
 
         $desc = $this->request->getPost('desc');
         $min = $this->request->getPost('min');
@@ -152,17 +152,18 @@ class Operateur extends BaseController
         $roles = array_column($operateurs, 'prefixe');
 
         if (!in_array($prefixe, $roles, true)) {
-            $operateurModel -> insert($data);
+            $operateurModel->insert($data);
         }
 
         return redirect()->to('/ajouterPrefixe');
     }
 
-    public function afficherGain($nom){
-        $operationModel= new OperationModel();
-        $details = $operationModel -> getDetailsOperations($nom);
-        
-        $somme= $operationModel -> getGain($nom);
+    public function afficherGain($nom)
+    {
+        $operationModel = new OperationModel();
+        $details = $operationModel->getDetailsOperations($nom);
+
+        $somme = $operationModel->getGain($nom);
 
         return view('operateurs/gain', [
             'details' => $details,
@@ -170,14 +171,26 @@ class Operateur extends BaseController
         ]);
     }
 
-    public function afficherClients($nom){
-        $operationModel= new OperationModel();
-        $details = $operationModel -> getUtilisateurs($nom);
-        
+    public function afficherClients($nom)
+    {
+        $operationModel = new OperationModel();
+        $details = $operationModel->getUtilisateurs($nom);
+
         return view('operateurs/clients', [
             'details' => $details
         ]);
     }
+
+    public function afficherGainsSepare()
+    {
+        $operationModel = new OperationModel();
+        $details = $operationModel->getGainsByFrais();
+
+        return view('operateurs/situation', [
+            'details' => $details
+        ]);
+    }
+
 
     public function logout()
     {
