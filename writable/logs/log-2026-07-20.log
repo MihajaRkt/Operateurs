@@ -1337,3 +1337,348 @@ in APPPATH/Models/OperationModel.php on line 38.
  7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
  8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
  9 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:17:31 --> ErrorException: Undefined array key "idClient"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 22.
+ 1 APPPATH/Views/operateurs/clients.php(22): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(179): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:18:50 --> ErrorException: Undefined array key "idClient"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 22.
+ 1 APPPATH/Views/operateurs/clients.php(22): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(179): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:21:42 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 21.
+ 1 APPPATH/Views/operateurs/clients.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:22:25 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 21.
+ 1 APPPATH/Views/operateurs/clients.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:22:25 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 21.
+ 1 APPPATH/Views/operateurs/clients.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:22:26 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 21.
+ 1 APPPATH/Views/operateurs/clients.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:22:26 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 21.
+ 1 APPPATH/Views/operateurs/clients.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:22:26 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 21.
+ 1 APPPATH/Views/operateurs/clients.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:22:37 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 21.
+ 1 APPPATH/Views/operateurs/clients.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:23:41 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 21.
+ 1 APPPATH/Views/operateurs/clients.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:23:42 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 21.
+ 1 APPPATH/Views/operateurs/clients.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:24:23 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 21.
+ 1 APPPATH/Views/operateurs/clients.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:24:23 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 21.
+ 1 APPPATH/Views/operateurs/clients.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:24:23 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 21.
+ 1 APPPATH/Views/operateurs/clients.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:24:23 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 21.
+ 1 APPPATH/Views/operateurs/clients.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:25:20 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 21.
+ 1 APPPATH/Views/operateurs/clients.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:25:20 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 21.
+ 1 APPPATH/Views/operateurs/clients.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:25:20 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 21.
+ 1 APPPATH/Views/operateurs/clients.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:25:20 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 21.
+ 1 APPPATH/Views/operateurs/clients.php(21): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:26:18 --> ErrorException: Undefined array key "idUtilisateur"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 22.
+ 1 APPPATH/Views/operateurs/clients.php(22): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:26:19 --> ErrorException: Undefined array key "idUtilisateur"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 22.
+ 1 APPPATH/Views/operateurs/clients.php(22): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:26:27 --> ErrorException: Undefined array key "idCLient"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 22.
+ 1 APPPATH/Views/operateurs/clients.php(22): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:26:27 --> ErrorException: Undefined array key "idCLient"
+[Method: GET, Route: compteClients/Orange]
+in APPPATH/Views/operateurs/clients.php on line 22.
+ 1 APPPATH/Views/operateurs/clients.php(22): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')

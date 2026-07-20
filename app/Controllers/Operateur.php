@@ -170,6 +170,15 @@ class Operateur extends BaseController
         ]);
     }
 
+    public function afficherClients($nom){
+        $operationModel= new OperationModel();
+        $details = $operationModel -> getUtilisateurs($nom);
+        
+        return view('operateurs/clients', [
+            'details' => $details
+        ]);
+    }
+
     public function logout()
     {
         session()->destroy();

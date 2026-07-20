@@ -28,6 +28,8 @@ $routes->post('/ajouterPrefixe', 'Operateur::ajouterPrefixe');
 
 $routes->get('/voirGain/(:any)', 'Operateur::afficherGain/$1');
 
+$routes->get('/compteClients/(:any)', 'Operateur::afficherClients/$1');
+
 //Client
 $routes->get('/', 'Home::client');
 

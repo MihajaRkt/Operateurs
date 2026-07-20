@@ -39,4 +39,17 @@ class OperationModel extends Model
         return $sql["gains"];
     }
 
+    public function getUtilisateurs($nom)
+    {
+        return $this->db->table($this->table)
+            ->select('operations.date_operation date, solde.montant solde,
+            operateurs.nom operateur, utilisateurs.nom client, operations.idUtilisateur idClient')
+            ->join('operateurs', 'operations.idOperateur = operateurs.idOperateur')
+            ->join('utilisateurs', 'operations.idUtilisateur = utilisateurs.idUtilisateur')
+            ->join('solde', 'operations.idUtilisateur = solde.idUtilisateur')
+            ->where('operateurs.nom', $nom)
+            ->get()
+            ->getResultArray();
+    }
+
 }

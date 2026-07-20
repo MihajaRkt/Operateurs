@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - Operateur</title>
 </head>
+
 <body>
     <h1>Operateur <?= $user["nom"] ?> </h1>
     <a href="/ajouterPrefixe"> Ajouter un prefixe</a>
     <a href="/ajouterFrais"> Ajouter des frais </a>
     <a href="/voirGain/<?= $user["nom"] ?>"> Voir votre gain </a>
+    <a href="/compteClients/<?= $user["nom"] ?>"> Voir les clients </a>
+
     <table border="1">
         <tr>
             <th>Description</th>
@@ -18,7 +22,7 @@
             <th>Frais</th>
         </tr>
 
-        <?php foreach($frais as $f){ ?>
+        <?php foreach ($frais as $f) { ?>
             <tr>
                 <td><?= $f["description"] ?></td>
                 <td><?= $f["montantMin"] ?></td>
@@ -29,4 +33,5 @@
         <?php } ?>
     </table>
 </body>
+
 </html>
