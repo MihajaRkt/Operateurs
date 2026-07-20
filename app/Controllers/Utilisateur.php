@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\CommissionModel;
 use App\Models\FraisModel;
 use App\Models\UtilisateurModel;
 use App\Models\SoldeModel;
@@ -145,10 +146,10 @@ class Utilisateur extends BaseController
                 "Aucun frais ne correspond à ce montant.",
             );
         }
-        
-        $montant = (float) $montant;
-        $montantTotal = $montant + (float) $frais["montant"];
 
+        $montant = (float) $montant;
+
+        // Récupérer l'opérateur de l'expéditeur (nécessaire pour commission et enregistrement)
         $operateurModel = new OperateurModel();
         $operateur = $operateurModel->getByTelephone($user["telephone"]);
 
@@ -157,6 +158,38 @@ class Utilisateur extends BaseController
                 "clients/transfert",
                 "Aucun opérateur ne correspond à votre numéro.",
             );
+        }
+
+        $sameOperateur = $utilisateurModel->sameOperateur(
+            $user["telephone"],
+            $destinataire["telephone"],
+        );
+
+        if (!$sameOperateur) {
+            // Transfert inter-opérateur : appliquer la commission de l'opérateur expéditeur
+            $commissionModel = new CommissionModel();
+            $comm = $commissionModel->getByOperateurId(
+                $operateur["idOperateur"],
+            );
+            if ($comm) {
+                $commission = $montant * ((float) $comm["pourcentage"] / 100);
+                $montantTotal =
+                    $montant + (float) $frais["montant"] + $commission;
+            } else {
+                $montantTotal = $montant + (float) $frais["montant"];
+            }
+        } else {
+            $montantTotal = $montant + (float) $frais["montant"];
+        }
+
+        // couvrir les frais de retrait du destinataire (même opérateur uniquement)
+        $inclureFraisRetrait =
+            $this->request->getPost("inclure_frais_retrait") === "1";
+        if ($sameOperateur && $inclureFraisRetrait) {
+            $fraisRetrait = $fraisModel->getFraisByMontant($montant, 2);
+            if ($fraisRetrait) {
+                $montantTotal += (float) $fraisRetrait["montant"];
+            }
         }
 
         $dateOperation = $this->request->getPost("date") ?: date("Y-m-d");
@@ -215,13 +248,21 @@ class Utilisateur extends BaseController
             );
         }
 
+        // Opérateur du destinataire (pour tracer son côté)
+        $operateurDestinataire = $operateurModel->getByTelephone(
+            $destinataire["telephone"],
+        );
+
         $operationModel = new OperationModel($db);
+
+        // Opération côté expéditeur
         if (
             !$operationModel->enregistrerOperation([
                 "idOperateur" => $operateur["idOperateur"],
                 "idType_operation" => 3,
                 "idFrais" => $frais["idFrais"],
                 "idUtilisateur" => (int) $user["id"],
+                "idDestinataire" => (int) $destinataire["idUtilisateur"],
                 "date_operation" => $dateOperation,
                 "montant" => $montant,
             ])
@@ -229,7 +270,28 @@ class Utilisateur extends BaseController
             $db->transRollback();
             return $this->renderClientForm(
                 "clients/transfert",
-                "Le transfert a échoué lors de l'enregistrement de l'opération.",
+                "Le transfert a échoué lors de l'enregistrement (expéditeur).",
+            );
+        }
+
+        // Opération côté destinataire (réception)
+        if (
+            !$operationModel->enregistrerOperation([
+                "idOperateur" => $operateurDestinataire
+                    ? $operateurDestinataire["idOperateur"]
+                    : $operateur["idOperateur"],
+                "idType_operation" => 3,
+                "idFrais" => null,
+                "idUtilisateur" => (int) $destinataire["idUtilisateur"],
+                "idDestinataire" => (int) $user["id"],
+                "date_operation" => $dateOperation,
+                "montant" => $montant,
+            ])
+        ) {
+            $db->transRollback();
+            return $this->renderClientForm(
+                "clients/transfert",
+                "Le transfert a échoué lors de l'enregistrement (destinataire).",
             );
         }
 

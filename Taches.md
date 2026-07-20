@@ -16,12 +16,12 @@
    - page affichant le gain selon le type d'operation (mihaja) (OK)
    - page affichant les pages clients
 
-4. Cote client
-   - page pour l'information du client : solde, etc, ...
-   - page pour faire un depot
-   - page pour faire un retrait
-   - page pour faire un transfert
-   - page pour voir l'historique des operations
+4. Cote client 
+   - page pour l'information du client : solde, etc, ... (Tendry) (OK)
+   - page pour faire un depot (TEndry) (OK)
+   - page pour faire un retrait (Tendry) (OK)
+   - page pour faire un transfert (Tendry) (OK)
+   - page pour voir l'historique des operations (Tendry) (OK)
 
 
 ## Version 2
@@ -30,9 +30,10 @@
 
 2. Cote operateur
    - page de configuration des prefixes (Mihaja) (OK)
-   - page de modification de comission pour le transfert vers autres       operateurs (Tendry)
+   - page de modification de comission pour le transfert vers autres operateurs (Tendry) (OK)
       modification table :
-         operateurs : alter table add column commission
+         operations : alter table add column idDestinataire (OK)
+      
    - 
 
 3. Cote client
