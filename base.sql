@@ -46,6 +46,7 @@ CREATE TABLE operations(
     idOperateur INT REFERENCES operateurs(idOperateur),
     idType_operation INT REFERENCES type_operation(idType_operation),
     idFrais INT REFERENCES frais(idFrais),
+    date_operation DATE,
     montant decimal(10,2)
 );
 
