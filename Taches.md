@@ -38,4 +38,10 @@
    - page de situation de gain selon les frais (Mihaja)
 
 3. Cote client
+   -  option inclure frais de retrait lors de l’envoi (Tendry)
+         -  mettre un checkbox si operateur differents (Tendry) (OK)
+         -  ajouter montatnt de frais pour le solde (Tendry) (OK) 
+
+   -  envoi de multiple numero en cours 
+
 
