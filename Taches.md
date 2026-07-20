@@ -33,8 +33,7 @@
    - page de modification de comission pour le transfert vers autres       operateurs (Tendry)
       modification table :
          operateurs : alter table add column commission
-
-   -  
+   - 
 
 3. Cote client
 

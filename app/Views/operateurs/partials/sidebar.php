@@ -29,6 +29,12 @@ $opLinks = [
         'label' => 'Mes gains',
         'icon'  => 'bi-graph-up-arrow',
     ],
+    'situation' => [
+        'href'  => '/gainSepare',
+        'label' => 'Situation gain',
+        'icon'  => 'bi-cash',
+    ],
+
     'clients' => [
         'href'  => '/compteClients/' . rawurlencode((string) $opNom),
         'label' => 'Mes clients',

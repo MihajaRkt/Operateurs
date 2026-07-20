@@ -179,6 +179,20 @@ class Operateur extends BaseController
         ]);
     }
 
+    public function afficherGainsSepare(){
+        $user= session() -> get('user');
+
+        $operationModel= new OperationModel();
+        $details = $operationModel -> getGainOperateur();
+
+        $somme= $operationModel -> getGain($user['nom']);
+
+        return view('operateurs/situation', [
+            'details' => $details,
+            'somme' => $somme
+        ]);
+    }
+
     public function logout()
     {
         session()->destroy();

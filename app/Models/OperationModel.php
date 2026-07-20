@@ -87,4 +87,22 @@ class OperationModel extends Model
             ->get()
             ->getResultArray();
     }
+
+    public function getGainOperateur()
+    {
+        return $this->db->table($this->table)
+            ->select('operations.date_operation date, operations.montant montant,
+            frais.montant gain,
+            type_operation.nom type,
+            operateurs.nom operateur, utilisateurs.nom client')
+            ->join('frais', 'operations.idFrais = frais.idFrais')
+            ->join('type_operation', 'operations.idType_operation = type_operation.idType_operation')
+            ->join('operateurs', 'operations.idOperateur = operateurs.idOperateur')
+            ->join('utilisateurs', 'operations.idUtilisateur = utilisateurs.idUtilisateur')
+            ->get()
+            ->getResultArray();
+    }
+
+
+
 }
