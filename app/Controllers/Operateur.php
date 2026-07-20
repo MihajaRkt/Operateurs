@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\OperateurModel;
 use App\Models\FraisModel;
+use App\Models\OperationModel;
 
 class Operateur extends BaseController
 {
@@ -158,12 +159,24 @@ class Operateur extends BaseController
     }
 
     public function afficherGain($nom){
-        $operateurModel= new OperateurModel();
-        $operateurs = $operateurModel
-                    -> where('operateurs.nom', $nom)
-                    -> findAll();
-
+        $operationModel= new OperationModel();
+        $details = $operationModel -> getDetailsOperations($nom);
         
+        $somme= $operationModel -> getGain($nom);
+
+        return view('operateurs/gain', [
+            'details' => $details,
+            'somme' => $somme
+        ]);
+    }
+
+    public function afficherClients($nom){
+        $operationModel= new OperationModel();
+        $details = $operationModel -> getUtilisateurs($nom);
+        
+        return view('operateurs/clients', [
+            'details' => $details
+        ]);
     }
 
     public function logout()

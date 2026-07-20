@@ -63,7 +63,10 @@ CREATE TABLE utilisateurs(
 
 INSERT INTO utilisateurs(nom, telephone, motdepasse) VALUES
 ('Alice', '0320000000', 'a'),
-('Admin', '0330000000', 'a');
+('Admin', '0330000000', 'a'),
+('Bob', '0341234567', 'pass123'),
+('Charlie', '0339876543', 'secret'),
+('Ravo', '0321122334', 'mypassword');
 
 CREATE TABLE operations(
     idOperation INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -75,6 +78,16 @@ CREATE TABLE operations(
     montant decimal(10,2)
 );
 
+INSERT INTO operations (idOperateur, idType_operation, idFrais, idUtilisateur, date_operation, montant) VALUES
+(1, 1, 2, 1, '2026-07-01', 5000.00),
+(2, 2, 4, 2, '2026-07-02', 20000.00),
+(4, 3, 5, 3, '2026-07-05', 50000.00),
+(2, 1, 7, 4, '2026-07-10', 150000.00),
+(1, 2, 1, 5, '2026-07-12', 500.00),
+(5, 3, 9, 4, '2026-07-15', 600000.00),
+(3, 2, 10, 3, '2026-07-18', 1500000.00),
+(2, 1, 4, 1, '2026-07-20', 15000.00);
+
 CREATE TABLE solde(
     idSolde INTEGER PRIMARY KEY AUTOINCREMENT,
     idUtilisateur INT REFERENCES utilisateurs(idUtilisateur),
@@ -83,4 +96,8 @@ CREATE TABLE solde(
 
 INSERT INTO solde(idUtilisateur, montant) VALUES
 (1, 10000),
-(2, 20000);
+(2, 20000),
+(3, 50000.00),
+(4, 150000.00),
+(5, 5000.00);
+

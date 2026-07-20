@@ -10,25 +10,19 @@
     <table border="1">
         <tr>
             <th>Opérateur</th>
-            <th>Opération</th>
             <th>Client</th>
-            <th>Date d'opération</th>
-            <th>Montant</th>
-            <th>Frais d'opération (Gain)</th>
+            <th>Solde</th>
         </tr>
 
         <?php foreach($details as $d){ ?>
             <tr>
                 <td><?= $d["operateur"] ?></td>
-                <td><?= $d["type"] ?></td>
                 <td><?= $d["client"] ?></td>
-                <td><?= $d["date"] ?></td>
-                <td><?= $d["montant"] ?></td>
-                <td><?= $d["gain"] ?></td>
+                <td><?= $d["solde"] ?></td>
+                <td><a href="/profil/<?= $d["idClient"] ?>">Voir profil</a></td>
             </tr>
         <?php } ?>
     </table>
 
-    <h3>Votre gain: <?= $somme ?></h3>
 </body>
 </html>
