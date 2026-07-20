@@ -8,7 +8,9 @@ use CodeIgniter\Router\RouteCollection;
 
 $routes->get('/', 'Home::index');
 $routes->get('/loginOperateur', 'Home::operateur');
-$routes->get('/', 'Home::client');
+$routes->get('/loginClient', 'Home::client');
+
+$routes->post('/clientLogin', 'Utilisateur::login');
 
 // $routes->get('/', 'Produit::produitsFiltre');
 // $routes->get('/login', 'Utilisateur::showLogin');
