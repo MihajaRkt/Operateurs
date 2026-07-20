@@ -10,6 +10,10 @@ DROP TABLE IF EXISTS solde;
 
 DROP TABLE IF EXISTS utilisateurs;
 
+DROP TABLE IF EXISTS commission;
+
+DROP TABLE IF EXISTS transfert;
+
 CREATE TABLE operateurs(
     idOperateur INTEGER PRIMARY KEY AUTOINCREMENT,
     prefixe varchar(10),
@@ -102,11 +106,11 @@ CREATE TABLE operations(
 INSERT INTO operations (idOperateur, idType_operation, idFrais, idUtilisateur, date_operation, montant, idDestinataire) VALUES
 (1, 1, 2, 1, '2026-07-01', 5000.00, 2),
 (2, 2, 4, 2, '2026-07-02', 20000.00, 2),
-(4, 2, 5, 3, '2026-07-05', 50000.00, 3),
-(2, 1, 7, 4, '2026-07-10', 150000.00, 4),
-(1, 2, 1, 5, '2026-07-12', 500.00, 3),
-(5, 1, 9, 4, '2026-07-15', 600000.00, 3),
-(3, 2, 10, 3, '2026-07-18', 1500000.00, 4),
+(2, 3, 5, 3, '2026-07-05', 50000.00, 3),
+(1, 1, 7, 4, '2026-07-10', 150000.00, 4),
+(1, 3, 1, 5, '2026-07-12', 500.00, 3),
+(2, 1, 9, 4, '2026-07-15', 600000.00, 3),
+(1, 3, 10, 3, '2026-07-18', 1500000.00, 4),
 (2, 1, 4, 1, '2026-07-20', 15000.00, 5);
 
 CREATE TABLE solde(
@@ -131,4 +135,3 @@ CREATE TABLE commission(
 INSERT INTO commission(idOperateur, pourcentage) VALUES
 (1, 20);
  
-
