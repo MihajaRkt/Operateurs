@@ -16,15 +16,17 @@ class SoldeModel extends Model
 
     public function ajouterMontant(int $userId, float $montant): bool
     {
-        return $this->where('idUtilisateur', $userId)
+        return $this->db->table($this->table)
+            ->where('idUtilisateur', $userId)
             ->set('montant', 'montant + ' . $montant, false)
-            ->update() !== false;
+            ->update();
     }
 
     public function retirerMontant(int $userId, float $montant): bool
     {
-        return $this->where('idUtilisateur', $userId)
+        return $this->db->table($this->table)
+            ->where('idUtilisateur', $userId)
             ->set('montant', 'montant - ' . $montant, false)
-            ->update() !== false;
+            ->update();
     }
 }

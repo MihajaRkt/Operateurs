@@ -34,6 +34,11 @@ class Utilisateur extends BaseController
         ];
     }
 
+    private function connectDatabase()
+    {
+        return \Config\Database::connect();
+    }
+
     private function renderClientForm(string $view, string $message = "")
     {
         return view($view, [
@@ -68,6 +73,25 @@ class Utilisateur extends BaseController
         ]);
 
         return view("clients/accueil", $this->getAccueilData());
+    }
+
+    public function historique()
+    {
+        $user = $this->getCurrentUser();
+
+        if (!$user) {
+            return redirect()->to("/loginClient");
+        }
+
+        $operationModel = new OperationModel();
+        $operations = $operationModel->getHistoriqueByUtilisateur(
+            (int) $user["id"],
+        );
+
+        return view("clients/historique", [
+            "user" => $user,
+            "operations" => $operations,
+        ]);
     }
 
     public function transfert()
@@ -137,10 +161,10 @@ class Utilisateur extends BaseController
 
         $dateOperation = $this->request->getPost("date") ?: date("Y-m-d");
 
-        $db = \Config\Database::connect();
+        $db = $this->connectDatabase();
         $db->transBegin();
 
-        $soldeModel = new SoldeModel();
+        $soldeModel = new SoldeModel($db);
         $soldeActuelle = $soldeModel->getByUtilisateurId((int) $user["id"]);
 
         if (!$soldeActuelle) {
@@ -170,21 +194,44 @@ class Utilisateur extends BaseController
             );
         }
 
-        $soldeModel->retirerMontant((int) $user["id"], $montantTotal);
-        $soldeModel->ajouterMontant(
-            (int) $destinataire["idUtilisateur"],
-            $montant,
-        );
+        if (!$soldeModel->retirerMontant((int) $user["id"], $montantTotal)) {
+            $db->transRollback();
+            return $this->renderClientForm(
+                "clients/transfert",
+                "Le transfert a échoué pendant le débit.",
+            );
+        }
 
-        $operationModel = new OperationModel();
-        $operationModel->enregistrerOperation([
-            "idOperateur" => $operateur["idOperateur"],
-            "idType_operation" => 3,
-            "idFrais" => $frais["idFrais"],
-            "idUtilisateur" => (int) $user["id"],
-            "date_operation" => $dateOperation,
-            "montant" => $montant,
-        ]);
+        if (
+            !$soldeModel->ajouterMontant(
+                (int) $destinataire["idUtilisateur"],
+                $montant,
+            )
+        ) {
+            $db->transRollback();
+            return $this->renderClientForm(
+                "clients/transfert",
+                "Le transfert a échoué pendant le crédit.",
+            );
+        }
+
+        $operationModel = new OperationModel($db);
+        if (
+            !$operationModel->enregistrerOperation([
+                "idOperateur" => $operateur["idOperateur"],
+                "idType_operation" => 3,
+                "idFrais" => $frais["idFrais"],
+                "idUtilisateur" => (int) $user["id"],
+                "date_operation" => $dateOperation,
+                "montant" => $montant,
+            ])
+        ) {
+            $db->transRollback();
+            return $this->renderClientForm(
+                "clients/transfert",
+                "Le transfert a échoué lors de l'enregistrement de l'opération.",
+            );
+        }
 
         if (!$db->transCommit()) {
             return $this->renderClientForm(
@@ -230,10 +277,10 @@ class Utilisateur extends BaseController
 
         $dateOperation = $this->request->getPost("date") ?: date("Y-m-d");
 
-        $db = \Config\Database::connect();
+        $db = $this->connectDatabase();
         $db->transBegin();
 
-        $soldeModel = new SoldeModel();
+        $soldeModel = new SoldeModel($db);
         $soldeActuelle = $soldeModel->getByUtilisateurId((int) $user["id"]);
 
         if (
@@ -247,17 +294,31 @@ class Utilisateur extends BaseController
             );
         }
 
-        $soldeModel->retirerMontant((int) $user["id"], (float) $montant);
+        if (!$soldeModel->retirerMontant((int) $user["id"], (float) $montant)) {
+            $db->transRollback();
+            return $this->renderClientForm(
+                "clients/retrait",
+                "Le retrait a échoué pendant le débit.",
+            );
+        }
 
-        $operationModel = new OperationModel();
-        $operationModel->enregistrerOperation([
-            "idOperateur" => $operateur["idOperateur"],
-            "idType_operation" => 2,
-            "idFrais" => null,
-            "idUtilisateur" => (int) $user["id"],
-            "date_operation" => $dateOperation,
-            "montant" => (float) $montant,
-        ]);
+        $operationModel = new OperationModel($db);
+        if (
+            !$operationModel->enregistrerOperation([
+                "idOperateur" => $operateur["idOperateur"],
+                "idType_operation" => 2,
+                "idFrais" => null,
+                "idUtilisateur" => (int) $user["id"],
+                "date_operation" => $dateOperation,
+                "montant" => (float) $montant,
+            ])
+        ) {
+            $db->transRollback();
+            return $this->renderClientForm(
+                "clients/retrait",
+                "Le retrait a échoué lors de l'enregistrement de l'opération.",
+            );
+        }
 
         if (!$db->transCommit()) {
             return $this->renderClientForm(
@@ -303,10 +364,10 @@ class Utilisateur extends BaseController
 
         $dateOperation = $this->request->getPost("date") ?: date("Y-m-d");
 
-        $db = \Config\Database::connect();
+        $db = $this->connectDatabase();
         $db->transBegin();
 
-        $soldeModel = new SoldeModel();
+        $soldeModel = new SoldeModel($db);
         if (!$soldeModel->getByUtilisateurId((int) $user["id"])) {
             $db->transRollback();
             return $this->renderClientForm(
@@ -315,17 +376,31 @@ class Utilisateur extends BaseController
             );
         }
 
-        $soldeModel->ajouterMontant((int) $user["id"], (float) $montant);
+        if (!$soldeModel->ajouterMontant((int) $user["id"], (float) $montant)) {
+            $db->transRollback();
+            return $this->renderClientForm(
+                "clients/depot",
+                "Le dépôt a échoué pendant le crédit.",
+            );
+        }
 
-        $operationModel = new OperationModel();
-        $operationModel->enregistrerOperation([
-            "idOperateur" => $operateur["idOperateur"],
-            "idType_operation" => 1,
-            "idFrais" => null,
-            "idUtilisateur" => (int) $user["id"],
-            "date_operation" => $dateOperation,
-            "montant" => (float) $montant,
-        ]);
+        $operationModel = new OperationModel($db);
+        if (
+            !$operationModel->enregistrerOperation([
+                "idOperateur" => $operateur["idOperateur"],
+                "idType_operation" => 1,
+                "idFrais" => null,
+                "idUtilisateur" => (int) $user["id"],
+                "date_operation" => $dateOperation,
+                "montant" => (float) $montant,
+            ])
+        ) {
+            $db->transRollback();
+            return $this->renderClientForm(
+                "clients/depot",
+                "Le dépôt a échoué lors de l'enregistrement de l'opération.",
+            );
+        }
 
         if (!$db->transCommit()) {
             return $this->renderClientForm(

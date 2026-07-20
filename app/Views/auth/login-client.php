@@ -12,7 +12,7 @@
 
     <form action="/clientLogin" method="post">
         <p>Entrez votre numero <input type="tel" name="numero"
-                minlength="10">
+                minlength="10" value="0320000000">
             <input type="submit" value="Confirmer">
         </p>
     </form>
