@@ -6,7 +6,9 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-$routes->get('/', 'Produit::produitsFiltre');
+$routes->get('/', 'Home::index');
+$routes->get('/loginOperateur', 'Home::operateur');
+$routes->get('/', 'Home::client');
 
 // $routes->get('/', 'Produit::produitsFiltre');
 // $routes->get('/login', 'Utilisateur::showLogin');
