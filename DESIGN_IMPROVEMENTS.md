@@ -1,8 +1,8 @@
-# 🎨 Améliorations du Design - Ré-Gym
+# 🎨 Améliorations du Design - Mobile Money
 
 ## Résumé des modifications
 
-J'ai **uniformisé et amélioré le design** de toutes les pages de l'application Ré-Gym en créant un système CSS moderne et cohérent.
+J'ai **uniformisé et amélioré le design** de toutes les pages de l'application Mobile Money en créant un système CSS moderne et cohérent.
 
 ## 📋 Fichiers modifiés
 
@@ -140,7 +140,7 @@ J'ai **uniformisé et amélioré le design** de toutes les pages de l'applicatio
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ma Page - Ré-Gym</title>
+    <title>Ma Page - Mobile Money</title>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>

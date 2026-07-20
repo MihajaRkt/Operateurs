@@ -2080,3 +2080,256 @@ in APPPATH/Views/operateurs/clients.php on line 22.
 11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
 12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
 >>>>>>> 4a4bd41ee5b5eb0e6db462d1d5894c4cffedca98
+CRITICAL - 2026-07-20 09:47:45 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: voirGain/Orange]
+in APPPATH/Views/operateurs/gain.php on line 138.
+ 1 APPPATH/Views/operateurs/gain.php(138): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/gain.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(167): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:47:48 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: voirGain/Orange]
+in APPPATH/Views/operateurs/gain.php on line 138.
+ 1 APPPATH/Views/operateurs/gain.php(138): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/gain.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(167): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:52:47 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: voirGain/Orange]
+in APPPATH/Views/operateurs/gain.php on line 138.
+ 1 APPPATH/Views/operateurs/gain.php(138): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/gain.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(167): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:52:59 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "clients/accueil.php"
+[Method: POST, Route: clientLogin]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Utilisateur.php(75): view()
+ 4 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Utilisateur->login()
+ 5 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:56:52 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: voirGain/Yas]
+in APPPATH/Views/operateurs/gain.php on line 138.
+ 1 APPPATH/Views/operateurs/gain.php(138): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/gain.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(167): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:56:53 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: voirGain/Yas]
+in APPPATH/Views/operateurs/gain.php on line 138.
+ 1 APPPATH/Views/operateurs/gain.php(138): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/gain.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(167): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:56:54 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: voirGain/Yas]
+in APPPATH/Views/operateurs/gain.php on line 138.
+ 1 APPPATH/Views/operateurs/gain.php(138): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/gain.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(167): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:56:54 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: voirGain/Yas]
+in APPPATH/Views/operateurs/gain.php on line 138.
+ 1 APPPATH/Views/operateurs/gain.php(138): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/gain.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(167): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:56:54 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: voirGain/Yas]
+in APPPATH/Views/operateurs/gain.php on line 138.
+ 1 APPPATH/Views/operateurs/gain.php(138): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/gain.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(167): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:56:54 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: voirGain/Yas]
+in APPPATH/Views/operateurs/gain.php on line 138.
+ 1 APPPATH/Views/operateurs/gain.php(138): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/gain.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(167): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:57:01 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: voirGain/Orange]
+in APPPATH/Views/operateurs/gain.php on line 138.
+ 1 APPPATH/Views/operateurs/gain.php(138): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/gain.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(167): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:57:17 --> ErrorException: Undefined array key "type"
+[Method: GET, Route: compteClients/Yas]
+in APPPATH/Views/operateurs/clients.php on line 106.
+ 1 APPPATH/Views/operateurs/clients.php(106): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:57:22 --> ErrorException: Undefined array key "type"
+[Method: GET, Route: compteClients/Yas]
+in APPPATH/Views/operateurs/clients.php on line 106.
+ 1 APPPATH/Views/operateurs/clients.php(106): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:57:23 --> ErrorException: Undefined array key "type"
+[Method: GET, Route: compteClients/Yas]
+in APPPATH/Views/operateurs/clients.php on line 106.
+ 1 APPPATH/Views/operateurs/clients.php(106): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:57:29 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: voirGain/Yas]
+in APPPATH/Views/operateurs/gain.php on line 138.
+ 1 APPPATH/Views/operateurs/gain.php(138): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/gain.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(167): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:57:32 --> ErrorException: Undefined array key "type"
+[Method: GET, Route: compteClients/Yas]
+in APPPATH/Views/operateurs/clients.php on line 106.
+ 1 APPPATH/Views/operateurs/clients.php(106): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/clients.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(177): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherClients()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
+CRITICAL - 2026-07-20 09:57:43 --> ErrorException: Undefined array key "solde"
+[Method: GET, Route: voirGain/Yas]
+in APPPATH/Views/operateurs/gain.php on line 138.
+ 1 APPPATH/Views/operateurs/gain.php(138): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/ideapad/S4/SI/Operateurs/app/Views/operateurs/gain.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Operateur.php(167): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Operateur->afficherGain()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/ideapad/S4/SI/Operateurs/public/index.php')
