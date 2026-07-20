@@ -8,9 +8,17 @@
    - type_operations
    - operations
    - frais
+   - historique_operations
 
 3. Cote operateur
    - page de modification du prefixe operateurs
    - page affichant les frais par tranche de montant
    - page affichant le gain selon le type d'operation
    - page affichant les pages clients
+
+4. Cote client
+   - page pour l'information du client : solde, etc, ...
+   - page pour faire un depot
+   - page pour faire un retrait
+   - page pour faire un transfert
+   - page pour voir l'historique des operations
