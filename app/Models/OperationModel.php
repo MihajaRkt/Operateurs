@@ -99,10 +99,9 @@ class OperationModel extends Model
                 'operations.idOperation,
                  operations.date_operation,
                  operations.montant,
-                 type_operation.nom    AS type_nom,
-                 frais.montant         AS frais_montant,
-                 dest.nom              AS destinataire_nom,
-                 dest.telephone        AS destinataire_telephone',
+                 operations.destinataire,
+                 type_operation.nom AS type_nom,
+                 frais.montant      AS frais_montant',
             )
             ->join(
                 "type_operation",
@@ -110,11 +109,6 @@ class OperationModel extends Model
                 "left",
             )
             ->join("frais", "frais.idFrais = operations.idFrais", "left")
-            ->join(
-                "utilisateurs AS dest",
-                "dest.idUtilisateur = operations.idDestinataire",
-                "left",
-            )
             ->where("operations.idUtilisateur", $userId)
             ->orderBy("operations.idOperation", "DESC")
             ->get()
@@ -148,7 +142,6 @@ class OperationModel extends Model
             ->getResultArray();
     }
 
-    
     public function getGainByFrais($idType_operation, $nom)
     {
         $sql = $this->db
@@ -198,5 +191,12 @@ class OperationModel extends Model
             ->where("operateurs.nom", $nom)
             ->get()
             ->getResultArray();
+    }
+
+    public function insertMany($liste)
+    {
+        foreach ($liste as $row) {
+            $this->db->table($this->table)->insert($row);
+        }
     }
 }

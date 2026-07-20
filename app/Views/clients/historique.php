@@ -96,14 +96,7 @@
                                                 : "-" ?>
                                         </td>
                                         <td>
-                                            <?php if ($destNom): ?>
-                                                <?= esc($destNom) ?>
-                                                <br><small class="text-muted"><?= esc(
-                                                    $destTel,
-                                                ) ?></small>
-                                            <?php else: ?>
-                                                <span class="text-muted">—</span>
-                                            <?php endif; ?>
+                                            <?= $op["destinataire"]?>
                                         </td>
                                         <td><?= esc(
                                             $op["date_operation"],
