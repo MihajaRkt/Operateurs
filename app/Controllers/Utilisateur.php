@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\UtilisateurModel;
+use App\Models\SoldeModel;
 
 class Utilisateur extends BaseController
 {
@@ -31,7 +32,33 @@ class Utilisateur extends BaseController
             'telephone' => $user['telephone'],
         ]);
 
-        return view('clients/accueil');
+        // Informations du client
+        $soldeModel = new SoldeModel();
+        $user = session()->get('user');
+        $montant = $soldeModel
+            ->where('idUtilisateur', $user['id'])
+            ->first();
+
+        return view('clients/accueil', [
+            'user'   => $user,
+            'solde'  => $montant['montant'],
+        ]);
     }
+
+    public function retraitForm()
+    {
+        return view('clients/retrait');
+    }
+
+    public function depotForm()
+    {
+        return view('clients/depot');
+    }
+
+    public function transfertForm()
+    {
+        return view('clients/transfert');
+    }
+
 
 }
