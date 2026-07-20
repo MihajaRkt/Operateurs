@@ -39,8 +39,7 @@ class Logger extends BaseConfig
      *
      * @var int|list<int>
      */
-    public $threshold = (ENVIRONMENT === 'production') ? 4 : 9;
-
+    public int $threshold = 4;
     /**
      * --------------------------------------------------------------------------
      * Date Format for Logs
@@ -77,11 +76,11 @@ class Logger extends BaseConfig
      * @var array<class-string<HandlerInterface>, array<string, int|list<string>|string>>
      */
     public array $handlers = [
-        /*
-         * --------------------------------------------------------------------
-         * File Handler
-         * --------------------------------------------------------------------
-         */
+            /*
+             * --------------------------------------------------------------------
+             * File Handler
+             * --------------------------------------------------------------------
+             */
         FileHandler::class => [
             // The log levels that this handler will handle.
             'handles' => [

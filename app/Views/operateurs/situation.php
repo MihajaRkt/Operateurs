@@ -44,6 +44,17 @@
             <div class="op-card p-3 p-lg-4">
                 <h2 class="h5 mb-3">Detail des opérations</h2>
 
+                <form action="/filtreGain" method="post">
+                    <select name="categorie" id="">
+                            <option value="all">Tous</option>
+                        <?php foreach($types as $t){ ?>
+                            <option value="<?= $t["idType_operation"] ?>"> <?= $t["nom"] ?> </option>
+                        <?php } ?>
+                    </select>
+
+                    <input type="submit" value="Filtrer">
+                </form>
+
                 <?php if (!empty($details)): ?>
                     <div class="table-responsive">
                         <table class="table op-table align-middle">

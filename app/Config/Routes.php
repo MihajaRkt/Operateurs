@@ -35,6 +35,8 @@ $routes->get('/compteClients/(:any)', 'Operateur::afficherClients/$1');
 
 $routes->get('/gainSepare', 'Operateur::afficherGainsSepare');
 
+$routes->post('/filtreGain', 'Operateur::filtrerGain');
+
 $routes->get("/logout", "Operateur::logout");
 
 //Client

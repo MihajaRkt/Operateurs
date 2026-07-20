@@ -35,6 +35,7 @@
          operations : alter table add column idDestinataire (OK)
       
    - 
+   - page de situation de gain selon les frais (Mihaja)
 
 3. Cote client
 

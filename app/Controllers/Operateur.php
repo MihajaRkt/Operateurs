@@ -6,6 +6,7 @@ use App\Models\CommissionModel;
 use App\Models\OperateurModel;
 use App\Models\FraisModel;
 use App\Models\OperationModel;
+use App\Models\TypeOperationModel;
 
 class Operateur extends BaseController
 {
@@ -182,18 +183,54 @@ class Operateur extends BaseController
         ]);
     }
 
-    public function afficherGainsSepare(){
-        $user= session() -> get('user');
+    public function afficherGainsSepare()
+    {
+        $user = session()->get('user');
 
-        $operationModel= new OperationModel();
-        $details = $operationModel -> getGainOperateur();
+        $typeModel = new TypeOperationModel();
+        $type = $typeModel->findAll();
 
-        $somme= $operationModel -> getGain($user['nom']);
+        $operationModel = new OperationModel();
+        $details = $operationModel->getGainOperateur();
+
+        $somme = $operationModel->getGain($user['nom']);
+
+        
+        return view('operateurs/situation', [
+            'details' => $details,
+            'types' => $type,
+            'somme' => $somme
+        ]);
+    }
+
+    public function filtrerGain()
+    {
+        $user = session()->get('user');
+        $id = $this->request->getPost('categorie');
+
+        $typeModel = new TypeOperationModel();
+        $type = $typeModel->findAll();
+
+        $operationModel = new OperationModel();
+        $somme = $operationModel->getGain($user['nom']);
+        $details = $operationModel->getGainOperateur();
+
+        if ($id != null) {
+            if ($id == 'all') {
+                $details = $operationModel->getGainOperateur();
+
+            } else {
+                $details = $operationModel->getGainFiltre($id, $user['nom']);
+                $somme = $operationModel->getGainByFrais($id, $user['nom']);
+            }
+        }
 
         return view('operateurs/situation', [
             'details' => $details,
+            'types' => $type,
             'somme' => $somme
         ]);
+
     }
 
     public function logout()

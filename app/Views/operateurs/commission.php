@@ -28,13 +28,13 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
         </div>
         <div class="offcanvas-body p-0">
-            <?= view('operateurs/partials/sidebar', ['user' => $user ?? null, 'opActive' => 'prefixe']) ?>
+            <?= view('operateurs/partials/sidebar', ['user' => $user ?? null, 'opActive' => 'commission']) ?>
         </div>
     </div>
 
     <div class="d-flex">
         <aside class="op-sidebar op-sidebar-desktop d-none d-lg-block">
-            <?= view('operateurs/partials/sidebar', ['user' => $user ?? null, 'opActive' => 'prefixe']) ?>
+            <?= view('operateurs/partials/sidebar', ['user' => $user ?? null, 'opActive' => 'commission']) ?>
         </aside>
 
         <main class="op-main p-3 p-lg-4">
