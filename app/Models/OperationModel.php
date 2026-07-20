@@ -14,7 +14,7 @@ class OperationModel extends Model
         "idType_operation",
         "idFrais",
         "idUtilisateur",
-        "idDestinataire",
+        "destinataire",
         "date_operation",
         "montant",
     ];
@@ -150,34 +150,52 @@ class OperationModel extends Model
 
     public function getGainByFrais($idType_operation, $nom)
     {
-        $sql= $this->db->table($this->table)
-            ->selectSum('frais.montant', 'gains')
-            ->join('operateurs', 'operations.idOperateur = operateurs.idOperateur')
-            ->join('type_operation', 'operations.idType_operation = type_operation.idType_operation')
-            ->join('frais', 'operations.idFrais = frais.idFrais')
-            ->where('operations.idType_operation', $idType_operation)
-            ->where('operateurs.nom', $nom)
+        $sql = $this->db
+            ->table($this->table)
+            ->selectSum("frais.montant", "gains")
+            ->join(
+                "operateurs",
+                "operations.idOperateur = operateurs.idOperateur",
+            )
+            ->join(
+                "type_operation",
+                "operations.idType_operation = type_operation.idType_operation",
+            )
+            ->join("frais", "operations.idFrais = frais.idFrais")
+            ->where("operations.idType_operation", $idType_operation)
+            ->where("operateurs.nom", $nom)
             ->get()
             ->getRowArray();
 
         return $sql["gains"];
     }
 
-        public function getGainFiltre($idType_operation, $nom)
+    public function getGainFiltre($idType_operation, $nom)
     {
-        return $this->db->table($this->table)
-            ->select('operations.date_operation date, operations.montant montant,
+        return $this->db
+            ->table($this->table)
+            ->select(
+                'operations.date_operation date, operations.montant montant,
             frais.montant gain,
             type_operation.nom type,
-            operateurs.nom operateur, utilisateurs.nom client')
-            ->join('frais', 'operations.idFrais = frais.idFrais')
-            ->join('type_operation', 'operations.idType_operation = type_operation.idType_operation')
-            ->join('operateurs', 'operations.idOperateur = operateurs.idOperateur')
-            ->join('utilisateurs', 'operations.idUtilisateur = utilisateurs.idUtilisateur')
-            ->where('operations.idType_operation', $idType_operation)
-            ->where('operateurs.nom', $nom)
+            operateurs.nom operateur, utilisateurs.nom client',
+            )
+            ->join("frais", "operations.idFrais = frais.idFrais")
+            ->join(
+                "type_operation",
+                "operations.idType_operation = type_operation.idType_operation",
+            )
+            ->join(
+                "operateurs",
+                "operations.idOperateur = operateurs.idOperateur",
+            )
+            ->join(
+                "utilisateurs",
+                "operations.idUtilisateur = utilisateurs.idUtilisateur",
+            )
+            ->where("operations.idType_operation", $idType_operation)
+            ->where("operateurs.nom", $nom)
             ->get()
             ->getResultArray();
     }
-
 }
