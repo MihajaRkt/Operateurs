@@ -263,7 +263,7 @@ class Operateur extends BaseController
             "pourcentage" => $comm["pourcentage"] ?? 0,
         ]);
     }
-
+epargne
     public function promotion()
     {
         $user = session()->get("user");

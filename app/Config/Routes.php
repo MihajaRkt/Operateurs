@@ -54,3 +54,6 @@ $routes->post("/depot/save", "Utilisateur::depot");
 $routes->post("/transfert/save", "Utilisateur::transfert");
 
 $routes->get("/historique", "Utilisateur::historique");
+
+$routes->get("/epargne", "Utilisateur::epargne");
+$routes->post("/voirEpargne", "Utilisateur::modifierEpargne");

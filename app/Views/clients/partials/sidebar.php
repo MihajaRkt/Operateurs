@@ -34,6 +34,12 @@ $clLinks = [
         'label' => 'Mes actions',
         'icon'  => 'bi-clock-history',
     ],
+    'epargne' => [
+        'href'  => '/epargne',
+        'label' => 'Entrez une epargne',
+        'icon'  => 'bi-clock',
+    ],
+
 ];
 ?>
 <div class="d-flex flex-column p-3 h-100">

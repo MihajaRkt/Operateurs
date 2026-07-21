@@ -46,6 +46,8 @@
 
 
 ## ALEA-1
+   - Configuration de promotion
+
    -  ajouter une condition dans la fonction tranfert
    promotion pourcentage am frais de transfert amle meme operateur
 
@@ -53,3 +55,6 @@
    si 50%
    mihena pourcentage le frais amle 
 
+## ALEA-2
+client misafidy epargne (en %) insertion dans base
+Lors de réception de transfert, l'épargne va vers épargne et le reste vers compte

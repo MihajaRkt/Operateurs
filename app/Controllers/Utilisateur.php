@@ -9,7 +9,7 @@ use App\Models\SoldeModel;
 use App\Models\OperateurModel;
 use App\Models\OperationModel;
 use App\Models\PromotionModel;
-
+use App\Models\EpargneModel;
 class Utilisateur extends BaseController
 {
     private function connectDatabase()
@@ -70,11 +70,57 @@ class Utilisateur extends BaseController
         $promotion = $model->where("idPromotion", 1)->first();
         $pourcentagePromotion = $promotion["pourcentage"];
 
+        $epargneModel= new EpargneModel();
+        $epargne= $epargneModel -> getEpargneByClient($user["id"]);
+
         return view("clients/historique", [
             "user" => $user,
             "operations" => $operations,
             "promotion" => $pourcentagePromotion,
         ]);
+    }
+
+    public function epargne()
+    {
+        $user = session()->get("user");
+
+        if (!$user) {
+            return redirect()->to("/loginClient");
+        }
+
+        $epargneModel = new EpargneModel();
+        $epargne = $epargneModel->getEpargneByClient($user["id"]);
+
+        if ($epargne != null) {
+            return view("clients/epargne", [
+                'epargne' => $epargne
+            ]);
+        }
+
+        return view("clients/epargne");
+    }
+
+    public function modifierEpargne()
+    {
+        $user = session()->get("user");
+
+        $epargneModel = new EpargneModel();
+        $epargne = $epargneModel->getEpargneByClient($user["id"]);
+
+        $ep = 0;
+        foreach ($epargne as $e) {
+            $ep = $epargneModel->find($e["idEpargne"]);
+        }
+
+        $pct = $this->request->getPost("pourcentage");
+
+        $data = [
+            "pourcentage" => $pct,
+        ];
+
+        $epargneModel->update($ep, $data);
+
+        return redirect()->to("/epargne");
     }
 
     public function transfert()
@@ -279,14 +325,16 @@ class Utilisateur extends BaseController
         }
 
         $operationModel = new OperationModel($db);
-        if (!$operationModel->enregistrerOperation([
-            "idOperateur" => $operateur["idOperateur"],
-            "idType_operation" => 2,
-            "idFrais" => null,
-            "idUtilisateur" => (int) $user["id"],
-            "date_operation" => $dateOperation,
-            "montant" => (float) $montant,
-        ])) {
+        if (
+            !$operationModel->enregistrerOperation([
+                "idOperateur" => $operateur["idOperateur"],
+                "idType_operation" => 2,
+                "idFrais" => null,
+                "idUtilisateur" => (int) $user["id"],
+                "date_operation" => $dateOperation,
+                "montant" => (float) $montant,
+            ])
+        ) {
             $db->transRollback();
             return $this->renderClientForm(
                 "clients/retrait",

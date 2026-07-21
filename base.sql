@@ -15,6 +15,8 @@ DROP TABLE IF EXISTS commission;
 DROP TABLE IF EXISTS transfert;
 DROP TABLE IF EXISTS promotion;
 
+DROP TABLE IF EXISTS epargne;
+
 CREATE TABLE operateurs(
     idOperateur INTEGER PRIMARY KEY AUTOINCREMENT,
     prefixe varchar(10),
@@ -144,3 +146,12 @@ INSERT INTO commission(idOperateur, pourcentage) VALUES
 
 INSERT INTO promotion(idPromotion, pourcentage) VALUES
 (1, 20);
+
+CREATE TABLE epargne(
+    idEpargne INTEGER PRIMARY KEY AUTOINCREMENT,
+    pourcentage decimal(10,2),
+    idUtilisateur INT REFERENCES utilisateurs(idUtilisateur)
+);
+
+INSERT INTO epargne(pourcentage, idUtilisateur) VALUES
+(10, 3);
