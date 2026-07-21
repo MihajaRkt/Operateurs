@@ -45,3 +45,11 @@
    -  envoi de multiple numero en cours 
 
 
+## ALEA-1
+   -  ajouter une condition dans la fonction tranfert
+   promotion pourcentage am frais de transfert amle meme operateur
+
+   base promotion
+   si 50%
+   mihena pourcentage le frais amle 
+

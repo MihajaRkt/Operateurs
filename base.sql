@@ -13,6 +13,7 @@ DROP TABLE IF EXISTS utilisateurs;
 DROP TABLE IF EXISTS commission;
 
 DROP TABLE IF EXISTS transfert;
+DROP TABLE IF EXISTS promotion;
 
 CREATE TABLE operateurs(
     idOperateur INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -23,7 +24,8 @@ CREATE TABLE operateurs(
 INSERT INTO operateurs(prefixe, nom) VALUES
 ('034', 'Yas'),
 ('038', 'Yas');
-
+INSERT INTO operateurs(prefixe, nom) VALUES
+('032', 'Yas');
 CREATE TABLE type_operation(
     idType_operation INTEGER PRIMARY KEY AUTOINCREMENT,
     nom varchar(50)
@@ -98,20 +100,20 @@ CREATE TABLE operations(
     idType_operation INT REFERENCES type_operation(idType_operation),
     idFrais INT REFERENCES frais(idFrais),
     idUtilisateur INT REFERENCES utilisateurs(idUtilisateur),
-    destinataire varchar(30),
+    idDestinataire INT REFERENCES utilisateurs(idUtilisateur),
     date_operation DATE,
     montant decimal(10,2)
 );
 
-INSERT INTO operations (idOperateur, idType_operation, idFrais, idUtilisateur, date_operation, montant, idDestinataire) VALUES
-(1, 1, 2, 1, '2026-07-01', 5000.00, 2),
-(2, 2, 4, 2, '2026-07-02', 20000.00, 2),
-(2, 3, 5, 3, '2026-07-05', 50000.00, 3),
-(1, 1, 7, 4, '2026-07-10', 150000.00, 4),
-(1, 3, 1, 5, '2026-07-12', 500.00, 3),
-(2, 1, 9, 4, '2026-07-15', 600000.00, 3),
-(1, 3, 10, 3, '2026-07-18', 1500000.00, 4),
-(2, 1, 4, 1, '2026-07-20', 15000.00, 5);
+INSERT INTO operations (idOperateur, idType_operation, idFrais, idUtilisateur, date_operation, montant, destinataire) VALUES
+(1, 1, 2, 1, '2026-07-01', 5000.00, '0324569930'),
+(2, 2, 4, 2, '2026-07-02', 20000.00, '0324569930'),
+(2, 3, 5, 3, '2026-07-05', 50000.00, '0324569930'),
+(1, 1, 7, 4, '2026-07-10', 150000.00, '0324569930'),
+(1, 3, 1, 5, '2026-07-12', 500.00, '0324569930'),
+(2, 1, 9, 4, '2026-07-15', 600000.00, '0324569930'),
+(1, 3, 10, 3, '2026-07-18', 1500000.00, '0324569930'),
+(2, 1, 4, 1, '2026-07-20', 15000.00, '0324569930');
 
 CREATE TABLE solde(
     idSolde INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -135,3 +137,10 @@ CREATE TABLE commission(
 INSERT INTO commission(idOperateur, pourcentage) VALUES
 (1, 20);
  
+ CREATE TABLE promotion(
+    idPromotion INTEGER PRIMARY KEY AUTOINCREMENT,
+    pourcentage decimal(10,2)
+);
+
+INSERT INTO promotion(idPromotion, pourcentage) VALUES
+(1, 20);

@@ -28,22 +28,6 @@ class UtilisateurModel extends Model
         if ($prefix1 === $prefix2) {
             return true;
         }
-
-        $op1 = $this->db
-            ->table("operateurs")
-            ->where("prefixe", $prefix1)
-            ->get()
-            ->getRowArray();
-        $op2 = $this->db
-            ->table("operateurs")
-            ->where("prefixe", $prefix2)
-            ->get()
-            ->getRowArray();
-
-        if (!$op1 || !$op2) {
-            return false;
-        }
-
-        return $op1["nom"] === $op2["nom"];
+        return false;
     }
 }

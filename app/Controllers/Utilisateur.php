@@ -8,33 +8,10 @@ use App\Models\UtilisateurModel;
 use App\Models\SoldeModel;
 use App\Models\OperateurModel;
 use App\Models\OperationModel;
+use App\Models\PromotionModel;
 
 class Utilisateur extends BaseController
 {
-    private function getCurrentUser(): ?array
-    {
-        $user = session()->get("user");
-
-        return is_array($user) ? $user : null;
-    }
-
-    private function getAccueilData(): array
-    {
-        $user = $this->getCurrentUser() ?? [];
-        $solde = 0;
-
-        if (!empty($user["id"])) {
-            $soldeModel = new SoldeModel();
-            $montant = $soldeModel->getByUtilisateurId((int) $user["id"]);
-            $solde = $montant["montant"] ?? 0;
-        }
-
-        return [
-            "user" => $user,
-            "solde" => $solde,
-        ];
-    }
-
     private function connectDatabase()
     {
         return \Config\Database::connect();
@@ -44,7 +21,7 @@ class Utilisateur extends BaseController
     {
         return view($view, [
             "erreur" => $message,
-            "user" => $this->getCurrentUser(),
+            "user" => session()->get("user"),
         ]);
     }
 
@@ -73,12 +50,12 @@ class Utilisateur extends BaseController
             "telephone" => $user["telephone"],
         ]);
 
-        return view("clients/accueil", $this->getAccueilData());
+        return redirect()->to('/accueil');
     }
 
     public function historique()
     {
-        $user = $this->getCurrentUser();
+        $user = session()->get("user");
 
         if (!$user) {
             return redirect()->to("/loginClient");
@@ -89,23 +66,25 @@ class Utilisateur extends BaseController
             (int) $user["id"],
         );
 
+        $model = new PromotionModel();
+        $promotion = $model->where("idPromotion", 1)->first();
+        $pourcentagePromotion = $promotion["pourcentage"];
+
         return view("clients/historique", [
             "user" => $user,
             "operations" => $operations,
+            "promotion" => $pourcentagePromotion,
         ]);
     }
 
     public function transfert()
     {
-        $user = $this->getCurrentUser();
+        $user = session()->get("user");
+        $utilisateurModel = new UtilisateurModel();
+        $operateurModel = new OperateurModel();
+        $operationModel = new OperationModel();
 
-        if (!$user) {
-            return redirect()->to("/loginClient");
-        }
-
-        $numero = trim($this->request->getPost("numero"));
         $montant = $this->request->getPost("montant");
-
         if (!is_numeric($montant) || $montant <= 0) {
             return $this->renderClientForm(
                 "clients/transfert",
@@ -113,33 +92,50 @@ class Utilisateur extends BaseController
             );
         }
 
-        if (!preg_match('/^(032|033|034|037|038)[0-9]{7}$/', $numero)) {
+        // Parsing des numéros (virgule, point-virgule ou saut de ligne)
+        $numerosRaw = trim($this->request->getPost("numeros") ?? "");
+        $numeros = array_values(
+            array_unique(
+                array_filter(
+                    array_map("trim", preg_split("/[\s,;]+/", $numerosRaw)),
+                ),
+            ),
+        );
+
+        if (empty($numeros)) {
             return $this->renderClientForm(
                 "clients/transfert",
-                "Le numéro est invalide.",
+                "Veuillez indiquer au moins un numéro.",
             );
         }
 
-        $utilisateurModel = new UtilisateurModel();
-        $destinataire = $utilisateurModel->getByTelephone($numero);
-
-        if (!$destinataire) {
-            return $this->renderClientForm(
-                "clients/transfert",
-                "Aucun utilisateur ne possède ce numéro.",
-            );
+        foreach ($numeros as $num) {
+            if (!preg_match('/^(032|033|034|037|038)[0-9]{7}$/', $num)) {
+                return $this->renderClientForm(
+                    "clients/transfert",
+                    "Le numéro $num est invalide.",
+                );
+            }
+            if ($num === $user["telephone"]) {
+                return $this->renderClientForm(
+                    "clients/transfert",
+                    "Vous ne pouvez pas transférer vers votre propre numéro.",
+                );
+            }
+            if (count($numeros) > 1 && !$utilisateurModel->sameOperateur($user["telephone"], $num)) {
+                return $this->renderClientForm(
+                    "clients/transfert",
+                    "Envoi multiple : le numéro $num n'est pas du même opérateur.",
+                );
+            }
         }
 
-        if ((int) $destinataire["idUtilisateur"] === (int) $user["id"]) {
-            return $this->renderClientForm(
-                "clients/transfert",
-                "Vous ne pouvez pas transférer vers votre propre numéro.",
-            );
-        }
+        $montant = (float) $montant;
+        $montantParPersonne = round($montant / count($numeros), 2);
+        $montantTotal = 0;
 
         $fraisModel = new FraisModel();
         $frais = $fraisModel->getFraisByMontant($montant, 3);
-
         if (!$frais) {
             return $this->renderClientForm(
                 "clients/transfert",
@@ -147,12 +143,7 @@ class Utilisateur extends BaseController
             );
         }
 
-        $montant = (float) $montant;
-
-        // Récupérer l'opérateur de l'expéditeur (nécessaire pour commission et enregistrement)
-        $operateurModel = new OperateurModel();
         $operateur = $operateurModel->getByTelephone($user["telephone"]);
-
         if (!$operateur) {
             return $this->renderClientForm(
                 "clients/transfert",
@@ -160,53 +151,47 @@ class Utilisateur extends BaseController
             );
         }
 
-        $sameOperateur = $utilisateurModel->sameOperateur(
-            $user["telephone"],
-            $destinataire["telephone"],
-        );
+        // Calcul du total à débiter
+        if (count($numeros) > 1) {
+            $sameOperateur = true; // déjà validé ci-dessus
 
-        if (!$sameOperateur) {
-            // Transfert inter-opérateur : appliquer la commission de l'opérateur expéditeur
-            $commissionModel = new CommissionModel();
-            $comm = $commissionModel->getByOperateurId(
-                $operateur["idOperateur"],
-            );
-            if ($comm) {
-                $commission = $montant * ((float) $comm["pourcentage"] / 100);
-                $montantTotal =
-                    $montant + (float) $frais["montant"] + $commission;
-            } else {
-                $montantTotal = $montant + (float) $frais["montant"];
-            }
         } else {
-            $montantTotal = $montant + (float) $frais["montant"];
-        }
+            $sameOperateur = $utilisateurModel->sameOperateur(
+                $user["telephone"],
+                $numeros[0],
+            );
+            if (!$sameOperateur) {
+                $commissionModel = new CommissionModel();
+                $comm = $commissionModel->getByOperateurId(
+                    $operateur["idOperateur"],
+                );
+                $commission = $comm ? $montant * ((float) $comm["pourcentage"] / 100) : 0.0;
+                $montantTotal = $montant + (float) $frais["montant"] + $commission;
+            } else {
+                $model = new PromotionModel();
+                $promotion = $model->where("idPromotion", 1)->first();
+                $pourcentagePromotion = $promotion["pourcentage"];
 
-        // couvrir les frais de retrait du destinataire (même opérateur uniquement)
-        $inclureFraisRetrait =
-            $this->request->getPost("inclure_frais_retrait") === "1";
-        if ($sameOperateur && $inclureFraisRetrait) {
-            $fraisRetrait = $fraisModel->getFraisByMontant($montant, 2);
-            if ($fraisRetrait) {
-                $montantTotal += (float) $fraisRetrait["montant"];
+                $fraisPromotion = $frais["montant"] * ($pourcentagePromotion / 100);
+                $montantTotal = $montant + (float) $fraisPromotion;
             }
         }
 
-        $dateOperation = $this->request->getPost("date") ?: date("Y-m-d");
+        // Option : frais de retrait du destinataire (même opérateur uniquement)
+        $inclureFraisRetrait = $this->request->getPost("inclure_frais_retrait") === "1";
+        if ($sameOperateur && $inclureFraisRetrait) {
+            $fraisRetrait = $fraisModel->getFraisByMontant($montantParPersonne, 2);
+            if ($fraisRetrait) {
+                $montantTotal += (float) $fraisRetrait["montant"] * count($numeros);
+            }
+        }
 
+        // --- Transaction : uniquement des écritures ---
         $db = $this->connectDatabase();
         $db->transBegin();
 
-        $soldeModel = new SoldeModel($db);
+        $soldeModel = new SoldeModel();
         $soldeActuelle = $soldeModel->getByUtilisateurId((int) $user["id"]);
-
-        if (!$soldeActuelle) {
-            $db->transRollback();
-            return $this->renderClientForm(
-                "clients/transfert",
-                "Votre compte ne possède pas de solde.",
-            );
-        }
 
         if ((float) $soldeActuelle["montant"] < $montantTotal) {
             $db->transRollback();
@@ -216,83 +201,20 @@ class Utilisateur extends BaseController
             );
         }
 
-        $soldeDestinataire = $soldeModel->getByUtilisateurId(
-            (int) $destinataire["idUtilisateur"],
-        );
-        if (!$soldeDestinataire) {
-            $db->transRollback();
-            return $this->renderClientForm(
-                "clients/transfert",
-                "Le destinataire ne possède pas de compte actif.",
-            );
-        }
+        $soldeModel->retirerMontant((int) $user["id"], $montantTotal);
 
-        if (!$soldeModel->retirerMontant((int) $user["id"], $montantTotal)) {
-            $db->transRollback();
-            return $this->renderClientForm(
-                "clients/transfert",
-                "Le transfert a échoué pendant le débit.",
-            );
-        }
+        $dateOperation = $this->request->getPost("date") ?: date("Y-m-d");
 
-        if (
-            !$soldeModel->ajouterMontant(
-                (int) $destinataire["idUtilisateur"],
-                $montant,
-            )
-        ) {
-            $db->transRollback();
-            return $this->renderClientForm(
-                "clients/transfert",
-                "Le transfert a échoué pendant le crédit.",
-            );
-        }
-
-        // Opérateur du destinataire (pour tracer son côté)
-        $operateurDestinataire = $operateurModel->getByTelephone(
-            $destinataire["telephone"],
-        );
-
-        $operationModel = new OperationModel($db);
-
-        // Opération côté expéditeur
-        if (
-            !$operationModel->enregistrerOperation([
-                "idOperateur" => $operateur["idOperateur"],
+        foreach ($numeros as $num) {
+            $operationModel->enregistrerOperation([
+                "idOperateur" => $operateur['idOperateur'],
                 "idType_operation" => 3,
                 "idFrais" => $frais["idFrais"],
                 "idUtilisateur" => (int) $user["id"],
-                "idDestinataire" => (int) $destinataire["idUtilisateur"],
                 "date_operation" => $dateOperation,
-                "montant" => $montant,
-            ])
-        ) {
-            $db->transRollback();
-            return $this->renderClientForm(
-                "clients/transfert",
-                "Le transfert a échoué lors de l'enregistrement (expéditeur).",
-            );
-        }
-
-        // Opération côté destinataire (réception)
-        if (
-            !$operationModel->enregistrerOperation([
-                "idOperateur" => $operateurDestinataire
-                    ? $operateurDestinataire["idOperateur"]
-                    : $operateur["idOperateur"],
-                "idType_operation" => 3,
-                "idFrais" => null,
-                "idUtilisateur" => (int) $destinataire["idUtilisateur"],
-                "idDestinataire" => (int) $user["id"],
-                "date_operation" => $dateOperation,
-                "montant" => $montant,
-            ])
-        ) {
-            $db->transRollback();
-            return $this->renderClientForm(
-                "clients/transfert",
-                "Le transfert a échoué lors de l'enregistrement (destinataire).",
-            );
+                "destinataire" => $num,
+                "montant" => (float) $montantTotal,
+            ]);
         }
 
         if (!$db->transCommit()) {
@@ -302,17 +224,12 @@ class Utilisateur extends BaseController
             );
         }
 
-        return view(
-            "clients/accueil",
-            array_merge($this->getAccueilData(), [
-                "success" => "Transfert effectué avec succès.",
-            ]),
-        );
+        return redirect()->to('/accueil');
     }
 
     public function retrait()
     {
-        $user = $this->getCurrentUser();
+        $user = session()->get("user");
 
         if (!$user) {
             return redirect()->to("/loginClient");
@@ -345,10 +262,7 @@ class Utilisateur extends BaseController
         $soldeModel = new SoldeModel($db);
         $soldeActuelle = $soldeModel->getByUtilisateurId((int) $user["id"]);
 
-        if (
-            !$soldeActuelle ||
-            (float) $soldeActuelle["montant"] < (float) $montant
-        ) {
+        if (!$soldeActuelle || (float) $soldeActuelle["montant"] < (float) $montant) {
             $db->transRollback();
             return $this->renderClientForm(
                 "clients/retrait",
@@ -365,16 +279,14 @@ class Utilisateur extends BaseController
         }
 
         $operationModel = new OperationModel($db);
-        if (
-            !$operationModel->enregistrerOperation([
-                "idOperateur" => $operateur["idOperateur"],
-                "idType_operation" => 2,
-                "idFrais" => null,
-                "idUtilisateur" => (int) $user["id"],
-                "date_operation" => $dateOperation,
-                "montant" => (float) $montant,
-            ])
-        ) {
+        if (!$operationModel->enregistrerOperation([
+            "idOperateur" => $operateur["idOperateur"],
+            "idType_operation" => 2,
+            "idFrais" => null,
+            "idUtilisateur" => (int) $user["id"],
+            "date_operation" => $dateOperation,
+            "montant" => (float) $montant,
+        ])) {
             $db->transRollback();
             return $this->renderClientForm(
                 "clients/retrait",
@@ -389,21 +301,12 @@ class Utilisateur extends BaseController
             );
         }
 
-        return view(
-            "clients/accueil",
-            array_merge($this->getAccueilData(), [
-                "success" => "Retrait effectué avec succès.",
-            ]),
-        );
+        return redirect()->to('/accueil');
     }
 
     public function depot()
     {
-        $user = $this->getCurrentUser();
-
-        if (!$user) {
-            return redirect()->to("/loginClient");
-        }
+        $user = session()->get("user");
 
         $montant = $this->request->getPost("montant");
 
@@ -416,13 +319,6 @@ class Utilisateur extends BaseController
 
         $operateurModel = new OperateurModel();
         $operateur = $operateurModel->getByTelephone($user["telephone"]);
-
-        if (!$operateur) {
-            return $this->renderClientForm(
-                "clients/depot",
-                "Aucun opérateur ne correspond à votre numéro.",
-            );
-        }
 
         $dateOperation = $this->request->getPost("date") ?: date("Y-m-d");
 
@@ -471,11 +367,6 @@ class Utilisateur extends BaseController
             );
         }
 
-        return view(
-            "clients/accueil",
-            array_merge($this->getAccueilData(), [
-                "success" => "Dépôt effectué avec succès.",
-            ]),
-        );
+        return redirect()->to('/accueil');
     }
 }

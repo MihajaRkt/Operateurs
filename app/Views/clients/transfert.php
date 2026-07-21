@@ -35,8 +35,8 @@
             <div class="op-card p-3 p-lg-4" style="max-width: 480px;">
                 <?php if (session()->getFlashdata("erreur")): ?>
                     <div class="alert alert-danger"><?= session()->getFlashdata(
-                        "erreur",
-                    ) ?></div>
+                                                        "erreur",
+                                                    ) ?></div>
                 <?php endif; ?>
 
                 <?php
@@ -46,17 +46,22 @@
 
                 <form action="/transfert/save" method="post" class="op-needs-validation" novalidate>
                     <div class="mb-3">
-                        <label for="montant" class="form-label">Montant</label>
+                        <label for="montant" class="form-label">Montant total (Ar)</label>
                         <input type="number" class="form-control" id="montant" name="montant" min="1" required>
-                        <div class="invalid-feedback">Merci d'indiquer un montant valide (superieur a 0).</div>
+                        <div class="invalid-feedback">Merci d'indiquer un montant valide (supérieur à 0).</div>
                     </div>
 
                     <div class="mb-3">
-                        <label for="numero" class="form-label">Numero du destinataire</label>
-                        <input type="tel" class="form-control" id="numero" name="numero" minlength="10"
-                            maxlength="10" pattern="[0-9]{10}" inputmode="numeric" required
-                            placeholder="Ex : 0320000000">
-                        <div class="invalid-feedback">Merci d'indiquer un numero valide (10 chiffres).</div>
+                        <label for="numeros" class="form-label">Numéro(s) destinataire(s)</label>
+                        <textarea class="form-control" id="numeros" name="numeros" rows="3" required
+                            placeholder="Ex : 0320000000&#10;Pour plusieurs : 0320000001, 0320000002"></textarea>
+                        <small class="text-muted">
+                            Séparez plusieurs numéros par une virgule ou un saut de ligne.
+                            <span id="multiInfo" class="d-none fw-semibold text-warning">
+                                &nbsp;— Envoi multiple : même opérateur, montant divisé équitablement.
+                            </span>
+                        </small>
+                        <div class="invalid-feedback">Veuillez indiquer au moins un numéro valide.</div>
                     </div>
 
                     <div class="mb-3 d-none" id="fraisRetraitBlock">
@@ -64,7 +69,7 @@
                             <input class="form-check-input" type="checkbox" id="inclure_frais_retrait"
                                 name="inclure_frais_retrait" value="1">
                             <label class="form-check-label" for="inclure_frais_retrait">
-                                Couvrir les frais de retrait du destinataire
+                                Couvrir les frais de retrait du / des destinataire(s)
                             </label>
                         </div>
                         <small class="text-muted">Disponible uniquement entre comptes du même opérateur.</small>
@@ -76,7 +81,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-op-primary">
-                        <i class="bi bi-arrow-left-right"></i> Transferer
+                        <i class="bi bi-arrow-left-right"></i> Transférer
                     </button>
                 </form>
             </div>
@@ -86,34 +91,38 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/js/operateur.js"></script>
     <script>
-    (function () {
-        // Mapping préfixe → nom réseau
-        const networks = {
-            '032': 'Orange', '037': 'Orange',
-            '033': 'Airtel',
-            '034': 'Yas',    '038': 'Yas',
-        };
-        const senderPrefix = '<?= esc($senderPrefix) ?>';
-        const senderNetwork = networks[senderPrefix] ?? null;
-        const block = document.getElementById('fraisRetraitBlock');
-        const checkbox = document.getElementById('inclure_frais_retrait');
-        const input = document.getElementById('numero');
+        (function() {
+            const networks = {
+                '032': 'Orange',
+                '037': 'Orange',
+                '033': 'Airtel',
+                '034': 'Yas',
+                '038': 'Yas',
+            };
+            const senderNetwork = networks['<?= esc($senderPrefix) ?>'] ?? null;
+            const textarea = document.getElementById('numeros');
+            const block = document.getElementById('fraisRetraitBlock');
+            const checkbox = document.getElementById('inclure_frais_retrait');
+            const multiInfo = document.getElementById('multiInfo');
 
-        function updateFraisRetrait() {
-            const val = input.value.trim();
-            const recipientPrefix = val.length >= 3 ? val.substring(0, 3) : null;
-            const recipientNetwork = recipientPrefix ? (networks[recipientPrefix] ?? null) : null;
-            const isSame = senderNetwork && recipientNetwork && senderNetwork === recipientNetwork;
-            if (isSame) {
-                block.classList.remove('d-none');
-            } else {
-                block.classList.add('d-none');
-                checkbox.checked = false;
+            function parseNums(raw) {
+                return [...new Set(raw.split(/[\s,;]+/).map(s => s.trim()).filter(Boolean))];
             }
-        }
 
-        input.addEventListener('input', updateFraisRetrait);
-    })();
+            function update() {
+                const nums = parseNums(textarea.value);
+                const isMulti = nums.length > 1;
+                multiInfo.classList.toggle('d-none', !isMulti);
+
+                const allSame = senderNetwork && nums.length > 0 &&
+                    nums.every(n => networks[n.substring(0, 3)] === senderNetwork);
+
+                block.classList.toggle('d-none', !allSame);
+                if (!allSame) checkbox.checked = false;
+            }
+
+            textarea.addEventListener('input', update);
+        })();
     </script>
 </body>
 

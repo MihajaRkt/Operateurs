@@ -46,8 +46,8 @@
 
                 <form action="/filtreGain" method="post">
                     <select name="categorie" id="">
-                            <option value="all">Tous</option>
-                        <?php foreach($types as $t){ ?>
+                        <option value="all">Tous</option>
+                        <?php foreach ($types as $t) { ?>
                             <option value="<?= $t["idType_operation"] ?>"> <?= $t["nom"] ?> </option>
                         <?php } ?>
                     </select>
@@ -119,8 +119,8 @@
                                             <?= esc((string) $t["gain"]) ?>
                                         </td>
                                         <td>
-                                            <?php $normal= ($t["montant"] - $t["gain"]) * ($commission/100) ?>
-                                            <?= $normal ?>
+                                            <?php $normal = ($t["montant"] - $t["gain"]) * ($commission / 100) ?>
+                                            <?= $normal ?> Ar
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

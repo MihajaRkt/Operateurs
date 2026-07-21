@@ -32,7 +32,7 @@
                             <label for="numero" class="form-label">Votre numero</label>
                             <input type="tel" class="form-control" id="numero" name="numero" required
                                 minlength="10" maxlength="10" pattern="[0-9]{10}" inputmode="numeric"
-                                value="<?= old('numero', '0320000000') ?>">
+                                value="<?= old('numero', '0341234567') ?>">
                             <div class="invalid-feedback">Merci d'entrer un numero valide (10 chiffres).</div>
                         </div>
 
