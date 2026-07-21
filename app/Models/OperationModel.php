@@ -144,7 +144,7 @@ class OperationModel extends Model
 
     public function getGainByFrais($idType_operation, $nom)
     {
-        $sql= $this->db->table($this->table)
+        $sql = $this->db->table($this->table)
             ->selectSum('frais.montant', 'gains')
             ->join('operateurs', 'operations.idOperateur = operateurs.idOperateur')
             ->join('type_operation', 'operations.idType_operation = type_operation.idType_operation')
@@ -157,7 +157,7 @@ class OperationModel extends Model
         return $sql["gains"];
     }
 
-        public function getGainFiltre($idType_operation, $nom)
+    public function getGainFiltre($idType_operation, $nom)
     {
         return $this->db->table($this->table)
             ->select('operations.date_operation date, operations.montant montant,
@@ -172,12 +172,5 @@ class OperationModel extends Model
             ->where('operateurs.nom', $nom)
             ->get()
             ->getResultArray();
-    }
-
-    public function insertMany($liste)
-    {
-        foreach ($liste as $row) {
-            $this->db->table($this->table)->insert($row);
-        }
     }
 }

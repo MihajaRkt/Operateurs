@@ -8,6 +8,7 @@ use App\Models\UtilisateurModel;
 use App\Models\SoldeModel;
 use App\Models\OperateurModel;
 use App\Models\OperationModel;
+use App\Models\PromotionModel;
 
 class Utilisateur extends BaseController
 {
@@ -65,9 +66,14 @@ class Utilisateur extends BaseController
             (int) $user["id"],
         );
 
+        $model = new PromotionModel();
+        $promotion = $model->where("idPromotion", 1)->first();
+        $pourcentagePromotion = $promotion["pourcentage"];
+
         return view("clients/historique", [
             "user" => $user,
             "operations" => $operations,
+            "promotion" => $pourcentagePromotion,
         ]);
     }
 
@@ -126,6 +132,7 @@ class Utilisateur extends BaseController
 
         $montant = (float) $montant;
         $montantParPersonne = round($montant / count($numeros), 2);
+        $montantTotal = 0;
 
         $fraisModel = new FraisModel();
         $frais = $fraisModel->getFraisByMontant($montant, 3);
@@ -147,7 +154,7 @@ class Utilisateur extends BaseController
         // Calcul du total à débiter
         if (count($numeros) > 1) {
             $sameOperateur = true; // déjà validé ci-dessus
-            $montantTotal = $montant + (float) $frais["montant"];
+
         } else {
             $sameOperateur = $utilisateurModel->sameOperateur(
                 $user["telephone"],
@@ -161,7 +168,12 @@ class Utilisateur extends BaseController
                 $commission = $comm ? $montant * ((float) $comm["pourcentage"] / 100) : 0.0;
                 $montantTotal = $montant + (float) $frais["montant"] + $commission;
             } else {
-                $montantTotal = $montant + (float) $frais["montant"];
+                $model = new PromotionModel();
+                $promotion = $model->where("idPromotion", 1)->first();
+                $pourcentagePromotion = $promotion["pourcentage"];
+
+                $fraisPromotion = $frais["montant"] * ($pourcentagePromotion / 100);
+                $montantTotal = $montant + (float) $fraisPromotion;
             }
         }
 

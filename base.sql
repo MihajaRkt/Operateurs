@@ -13,6 +13,7 @@ DROP TABLE IF EXISTS utilisateurs;
 DROP TABLE IF EXISTS commission;
 
 DROP TABLE IF EXISTS transfert;
+DROP TABLE IF EXISTS promotion;
 
 CREATE TABLE operateurs(
     idOperateur INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -23,7 +24,8 @@ CREATE TABLE operateurs(
 INSERT INTO operateurs(prefixe, nom) VALUES
 ('034', 'Yas'),
 ('038', 'Yas');
-
+INSERT INTO operateurs(prefixe, nom) VALUES
+('032', 'Yas');
 CREATE TABLE type_operation(
     idType_operation INTEGER PRIMARY KEY AUTOINCREMENT,
     nom varchar(50)
@@ -135,3 +137,10 @@ CREATE TABLE commission(
 INSERT INTO commission(idOperateur, pourcentage) VALUES
 (1, 20);
  
+ CREATE TABLE promotion(
+    idPromotion INTEGER PRIMARY KEY AUTOINCREMENT,
+    pourcentage decimal(10,2)
+);
+
+INSERT INTO promotion(idPromotion, pourcentage) VALUES
+(1, 20);

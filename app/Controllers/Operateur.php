@@ -6,6 +6,7 @@ use App\Models\CommissionModel;
 use App\Models\OperateurModel;
 use App\Models\FraisModel;
 use App\Models\OperationModel;
+use App\Models\PromotionModel;
 use App\Models\TypeOperationModel;
 
 use App\Models\UtilisateurModel;
@@ -31,12 +32,6 @@ class Operateur extends BaseController
             "nom" => $user["nom"],
             "numero" => $user["prefixe"],
         ]);
-
-        // $produitModel= new ProduitModel();
-        // $produits= $produitModel -> getDetailsProduits();
-
-        // $categorieModel= new CategorieModel();
-        // $categories= $categorieModel -> findAll();
 
         $fraisModel = new FraisModel();
         $frais = $fraisModel->findAll();
@@ -269,6 +264,24 @@ class Operateur extends BaseController
         ]);
     }
 
+    public function promotion()
+    {
+        $user = session()->get("user");
+
+        if (!$user) {
+            return redirect()->to("/loginOperateur");
+        }
+
+        $model = new PromotionModel();
+        $comm = $model->where("idPromotion", 1)->first();
+
+        return view("operateurs/promotion", [
+            "user" => $user,
+            "promotion" => $comm,
+            "pourcentage" => $comm["pourcentage"] ?? 0,
+        ]);
+    }
+
     public function modifierCommission()
     {
         $user = session()->get("user");
@@ -304,6 +317,43 @@ class Operateur extends BaseController
         return redirect()
             ->to("/voirCommission")
             ->with("success", "Commission mise à jour avec succès.");
+    }
+
+    public function modifierPrommotion()
+    {
+        $user = session()->get("user");
+
+        if (!$user) {
+            return redirect()->to("/loginOperateur");
+        }
+
+        $pourcentage = $this->request->getPost("pourcentage");
+
+        if (
+            !is_numeric($pourcentage) ||
+            $pourcentage < 0 ||
+            $pourcentage > 100
+        ) {
+            return redirect()
+                ->back()
+                ->withInput()
+                ->with(
+                    "erreur",
+                    "La commission doit être comprise entre 0 et 100.",
+                );
+        }
+
+        $model = new PromotionModel();
+        if (!$model->savePromm((float) $pourcentage)) {
+            return redirect()
+                ->back()
+                ->withInput()
+                ->with("erreur", "La mise à jour de la commission a échoué.");
+        }
+
+        return redirect()
+            ->to("/voirPrommotion")
+            ->with("success", "Prommotion mise à jour avec succès.");
     }
 
     public function historique($id)

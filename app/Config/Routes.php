@@ -29,7 +29,9 @@ $routes->post("/ajouterPrefixe", "Operateur::ajouterPrefixe");
 
 $routes->get('/voirGain/(:any)', 'Operateur::afficherGain/$1');
 $routes->get('/voirCommission', 'Operateur::commission');
+$routes->get('/voirPromotion', 'Operateur::promotion');
 $routes->post('/voirCommission', 'Operateur::modifierCommission');
+$routes->post('/voirPromotion', 'Operateur::modifierPrommotion');
 
 $routes->get('/compteClients/(:any)', 'Operateur::afficherClients/$1');
 $routes->get('/profil/(:num)', 'Operateur::historique/$1');

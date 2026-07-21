@@ -29,6 +29,11 @@ $opLinks = [
         'label' => 'Configuration de commission',
         'icon'  => 'bi-coin',
     ],
+    'promotion' => [
+        'href'  => '/voirPromotion',
+        'label' => 'Configuration de promotion',
+        'icon'  => 'bi-coin',
+    ],
     'gain' => [
         'href'  => '/voirGain/' . rawurlencode((string) $opNom),
         'label' => 'Mes gains',
@@ -64,7 +69,7 @@ $opLinks = [
     <nav class="op-nav nav nav-pills flex-column gap-1 mb-auto">
         <?php foreach ($opLinks as $key => $link): ?>
             <a href="<?= $link['href'] ?>"
-               class="nav-link <?= $opActive === $key ? 'active' : '' ?>">
+                class="nav-link <?= $opActive === $key ? 'active' : '' ?>">
                 <i class="bi <?= $link['icon'] ?>"></i>
                 <span><?= esc($link['label']) ?></span>
             </a>
